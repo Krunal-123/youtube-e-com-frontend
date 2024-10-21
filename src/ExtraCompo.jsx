@@ -1,7 +1,6 @@
 import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx'
 import MobileOnly from '../components/MobileOnly.jsx'
-import { Outlet} from 'react-router-dom';
 import { useCart } from './context/CartContext.jsx';
 import { useCookies } from 'react-cookie';
 import { Outlet, useNavigate } from 'react-router-dom';

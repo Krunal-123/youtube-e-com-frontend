@@ -43,7 +43,7 @@ export default function ServiceList() {
   if (!cards || !user) {
     return (
       <>
-        <Flickty />
+        {/* <Flickty /> */}
         <div className="flex justify-center items-center h-[250px] text-xl">
           <Spinner animation="border" />
         </div>
@@ -53,7 +53,7 @@ export default function ServiceList() {
 
   return (
     <>
-      <Flickty />
+      {/* <Flickty /> */}
       <div className="my-12">
         {cards.length > 0 ? (
           <h1 className={`mb-4 text-4xl font-extrabold leading-none tracking-tight text-${LightMode?"white":"dark"} md:text-5xl lg:text-6xl text-center`}>

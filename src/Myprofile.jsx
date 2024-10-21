@@ -83,7 +83,7 @@ export default function PersonalProfile() {
 
   const handleSave = async () => {
     try {
-      let res = await axios.patch("http://localhost:3000/updatedetails", editDetails);
+      let res = await axios.patch("https://youtube-e-com-backend.onrender.com/updatedetails", editDetails);
       setIsEditing(false);
       setUser([{ ...user[0], ...editDetails }]);
     } catch (error) {

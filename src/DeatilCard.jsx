@@ -33,7 +33,7 @@ function BasicExample() {
 
     const Addcart = async () => {
         try {
-            await axios.post('http://localhost:3000/addcart', { id, cookies });
+            await axios.post('https://youtube-e-com-backend.onrender.com/addcart', { id, cookies });
             setBtn(true);
             setCartItems((prevCount) => prevCount + 1);
             Toast('Add into your Cart', 1300)

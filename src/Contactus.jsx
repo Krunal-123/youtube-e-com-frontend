@@ -29,7 +29,7 @@ function ContactUs() {
     }
 
     try {
-      await axios.post("http://localhost:3000/usersdetails", { ...data })
+      await axios.post("https://youtube-e-com-backend.onrender.com/usersdetails", { ...data })
       setBool(p => !p)
       Toast("Submitted", 1000)
       optional.value = ''

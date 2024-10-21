@@ -47,7 +47,7 @@ export default function ResetPassword() {
     }
 
     try {
-      const res = await axios.patch('http://localhost:3000/reset-password', { email, password });
+      const res = await axios.patch('https://youtube-e-com-backend.onrender.com/reset-password', { email, password });
       if (res.data == 'password_reset') {
         Toast('Password Reset Successfully.',2000)
         navigate('/login');

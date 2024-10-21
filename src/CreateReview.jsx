@@ -33,7 +33,7 @@ export default function WriteReviewPage({ id }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // Here you can send the data to a backend or display it in the app.
-    await axios.post("http://localhost:3000/review", { reviewData }).then((r) => {
+    await axios.post("https://youtube-e-com-backend.onrender.com/review", { reviewData }).then((r) => {
       setOpen(false)
       Toast('Review Submitted', 1000)
       setAdd(p => p + 1)

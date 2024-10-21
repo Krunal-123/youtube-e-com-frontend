@@ -43,7 +43,7 @@ export default function ForgotPassword() {
   const handleSendOtp = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:3000/send-otp', { email });
+      const res = await axios.post('https://youtube-e-com-backend.onrender.com/send-otp', { email });
       if (res.data === 'User not found') {
         errorToast('User not found',2000)
       } else {

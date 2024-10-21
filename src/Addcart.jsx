@@ -35,7 +35,7 @@ export default function Basic() {
 
   async function del(id) {
     try {
-      await axios.post(`http://localhost:3000/addcart/delete/${id}`, { cookies });
+      await axios.post(`https://youtube-e-com-backend.onrender.com/addcart/delete/${id}`, { cookies });
       errorToast("Deleted", 1000)
       setUserData(prevUserData => prevUserData.filter(d => d._id !== id));
     } catch (error) {
@@ -47,7 +47,7 @@ export default function Basic() {
   async function handleRazorpayPayment() {
     try {
       // Step 1: Create an order on the server
-      const { data: order } = await axios.post("http://localhost:3000/create-order", { amount: total });
+      const { data: order } = await axios.post("https://youtube-e-com-backend.onrender.com/create-order", { amount: total });
       // Step 2: Configure Razorpay options
       const options = {
         key: "rzp_test_wh5dAj2ZhVsw97", // Replace with your actual key from env variable in production
@@ -63,7 +63,7 @@ export default function Basic() {
             let userId = user[0]?._id;
             const productIds = UserData.map(p => p._id);
             // Log the details before sending the purchase request
-            await axios.post("http://localhost:3000/addcart/purchase", { data: productIds, id: userId, amount: total });
+            await axios.post("https://youtube-e-com-backend.onrender.com/addcart/purchase", { data: productIds, id: userId, amount: total });
             setLengthCart(productIds)
             setUserData([]);
             setCartItems(0)

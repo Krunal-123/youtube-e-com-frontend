@@ -34,7 +34,7 @@ export const CartProvider = ({ children }) => {
   const fetchData = async () => {
     try {
       // Fetch services data
-      const { data: servicesData } = await axios.post("http://localhost:3000/services");
+      const { data: servicesData } = await axios.post("https://youtube-e-com-backend.onrender.com/services");
       // console.log(servicesData);
       let Status = servicesData.slice(0, 3).map(p => ({ ...p, status: "New", color: "primary" }))
       let Status2 = servicesData.slice(3, 6).map(p => ({ ...p, status: "Trending🔥", color: "warning" }))
@@ -43,7 +43,7 @@ export const CartProvider = ({ children }) => {
 
       // Check if cookies and token are defined before making API requests
       if (cookies && cookies.token != undefined) {
-        const userResponse = await axios.post("http://localhost:3000/addcart/user", { cookies });
+        const userResponse = await axios.post("https://youtube-e-com-backend.onrender.com/addcart/user", { cookies });
         // Ensure that userResponse and its properties are defined before accessing them
         if (userResponse.data && userResponse.data[0] && userResponse.data[0].addcart) {
           setUser(userResponse.data);

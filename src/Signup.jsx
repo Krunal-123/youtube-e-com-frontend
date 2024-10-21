@@ -58,7 +58,7 @@ export default function SignUp() {
     }
     if (password.value == confirm.value) {
       let data = { firstName: firstName.value, lastName: lastName.value, number: number.value, email: email.value, gender: gender.value, password: password.value, confirm: confirm.value }
-      axios.post('http://localhost:3000/signup', data)
+      axios.post('https://youtube-e-com-backend.onrender.com/signup', data)
         .then((res) => {
           console.log(res);
           if (res.data == 'user_already_exist') {

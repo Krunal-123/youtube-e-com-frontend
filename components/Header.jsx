@@ -7,7 +7,6 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useCart } from '../src/context/CartContext'
 import axios from 'axios';
-import Toggle from 'react-toggle';
 import CustomizedSwitches from './ModeSwitch';
 
 export default function PrimarySearchAppBar() {
@@ -19,14 +18,14 @@ export default function PrimarySearchAppBar() {
   let navigate = useNavigate()
 
   const Categoires = async (categorise) => {
-    const { data: servicesData } = await axios.post("http://localhost:3000/services", { categorise });
+    const { data: servicesData } = await axios.post("https://youtube-e-com-backend.onrender.com/services", { categorise });
     setServices(servicesData);
     navigate("/home")
   }
   const search = async (e) => {
     if (e.key === "Enter") {
       let value = e.currentTarget.value
-      const { data: servicesData } = await axios.post("http://localhost:3000/search", { value });
+      const { data: servicesData } = await axios.post("https://youtube-e-com-backend.onrender.com/search", { value });
       setServices(servicesData)
       navigate("/home")
     }

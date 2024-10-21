@@ -11,7 +11,7 @@ function GridExample() {
   const { user, setFav, LightMode } = useCart()
 
   const handleFavoriteClick = async (email, id) => {
-    await axios.post("http://localhost:3000/addfavourite/delete", { email, id });
+    await axios.post("https://youtube-e-com-backend.onrender.com/addfavourite/delete", { email, id });
     errorToast('Remove', 1000)
     setFav((p) => p - 1) // Update the state if successfully added to favorites
   }

@@ -21,9 +21,9 @@ export default function Carousel() {
         reloadOnUpdate={true}  // Reload carousel on update
         static={true}          // Static carousel (no dragging)
       >
-        <img src="../src/assets/carousel 1.jpg" alt="Carousel Slide 1" className='h-[400px] border-0 rounded' />
-        <img src="../src/assets/carousel 2.jpg" alt="Carousel Slide 2" className='h-[400px] rounded border-0' />
-        <img src="../src/assets/carousel 3.jpg" alt="Carousel Slide 3" className='h-[400px] rounded border-0' />
+        <img src="../../src/assets/carousel 1.jpg" alt="Carousel Slide 1" className='h-[400px] border-0 rounded' />
+        <img src="../../src/assets/carousel 2.jpg" alt="Carousel Slide 2" className='h-[400px] rounded border-0' />
+        <img src="../../src/assets/carousel 3.jpg" alt="Carousel Slide 3" className='h-[400px] rounded border-0' />
       </Flickity>
 
       {/* APP render */}
@@ -35,9 +35,9 @@ export default function Carousel() {
         reloadOnUpdate={true}  // Reload carousel on update
         static={true}          // Static carousel (no dragging)
       >
-        <img src="../src/assets/carousel 1.jpg" alt="Carousel Slide 1" className='h-[400px] border-0 rounded' />
-        <img src="../src/assets/carousel 2.jpg" alt="Carousel Slide 2" className='h-[400px] rounded border-0' />
-        <img src="../src/assets/carousel 3.jpg" alt="Carousel Slide 3" className='h-[400px] rounded border-0' />
+        <img src="../../src/assets/carousel 1.jpg" alt="Carousel Slide 1" className='h-[400px] border-0 rounded' />
+        <img src="../../src/assets/carousel 2.jpg" alt="Carousel Slide 2" className='h-[400px] rounded border-0' />
+        <img src="../../src/assets/carousel 3.jpg" alt="Carousel Slide 3" className='h-[400px] rounded border-0' />
       </Flickity>
     </>
   );

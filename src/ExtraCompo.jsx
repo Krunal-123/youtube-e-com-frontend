@@ -12,7 +12,7 @@ export default function (){
     const [cookies] = useCookies()
     useEffect(() => {
         if (!cookies.token) {
-            Navigate('/login')
+            Navigate('/home')
         }
         else {
             Navigate('/home')

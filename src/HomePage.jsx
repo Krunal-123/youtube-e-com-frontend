@@ -8,9 +8,10 @@ import ExtraCompo from './ExtraCompo.jsx';
 
 export default function () {
     let Navigate = useNavigate()
-    const [cookies] = useCookies()
+    const [cookies] = useCookies(["token"])
     useEffect(() => {
         if (!cookies.token) {
+            console.log(111);
             Navigate('/login')
         }
         else {

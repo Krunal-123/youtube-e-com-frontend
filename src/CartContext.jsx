@@ -56,6 +56,7 @@ export const CartProvider = ({ children }) => {
           setCartItems(userResponse.data[0].addcart.length);
         }
       } else {
+        console.log(222);
         Navigate("/login")
       }
     } catch (error) {

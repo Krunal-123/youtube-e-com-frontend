@@ -18,13 +18,13 @@ export const CartProvider = ({ children }) => {
   // Services products
   const [services, setServices] = useState([]);
   // USER data
-  const [user, setUser] = useState();
+  const [user, setUser] = useState([]);
   // review added
   const [add, setAdd] = useState(0)
   // isExploding
   const [isExploding, setIsExploding] = useState(false);
   // light mode
-  const [LightMode, setLightMode] = useState()
+  const [LightMode, setLightMode] = useState(false)
   // before purchase items lenght
   const [LengthCart, setLengthCart] = useState([])
 
@@ -43,10 +43,11 @@ export const CartProvider = ({ children }) => {
       servicesData.splice(0, 6, ...Status.concat(Status2))
       setServices(servicesData);
       
-      console.log(cookies);
+      console.log(cookies.token);
 
       // Check if cookies and token are defined before making API requests
       if (cookies && cookies.token != undefined) {
+        console.log('cookie pass');
         const userResponse = await axios.post("https://youtube-e-com-backend.onrender.com/addcart/user", { cookies });
         // Ensure that userResponse and its properties are defined before accessing them
         if (userResponse.data && userResponse.data[0] && userResponse.data[0].addcart) {

@@ -35,6 +35,7 @@ export const CartProvider = ({ children }) => {
   // user[0]?.myfavourite.length
   // Fetch services and user data
   const fetchData = async () => {
+    axios.defaults.withCredentials = true;
     try {
       // Fetch services data
       const { data: servicesData } = await axios.post("https://youtube-e-com-backend.onrender.com/services");
@@ -42,7 +43,7 @@ export const CartProvider = ({ children }) => {
       let Status2 = [...servicesData].slice(3, 6).map(p => ({ ...p, status: "Trending🔥", color: "warning" }))
       servicesData.splice(0, 6, ...Status.concat(Status2))
       setServices(servicesData);
-      
+
       console.log(cookies.token);
 
       // Check if cookies and token are defined before making API requests
@@ -74,11 +75,11 @@ export const CartProvider = ({ children }) => {
 
   return (
     <CartContext.Provider value={{ cartItems, setCartItems, services, setServices, user, setUser, cookies, removeCookie, fav, setFav, open, setOpen, setAdd, isExploding, setIsExploding, LightMode, setLightMode, LengthCart, setLengthCart }}>
-      {loading ? 
-      <div className='container text-center h-[100vh] flex justify-center items-center'>
-      <Spinner/> 
-      </div>
-      : children}
+      {loading ?
+        <div className='container text-center h-[100vh] flex justify-center items-center'>
+          <Spinner />
+        </div>
+        : children}
     </CartContext.Provider>
   );
 };

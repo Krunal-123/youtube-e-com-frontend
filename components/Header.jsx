@@ -5,7 +5,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { useCart } from '../src/context/CartContext'
+import { useCart } from '../src/CartContext'
 import axios from 'axios';
 import CustomizedSwitches from './ModeSwitch';
 

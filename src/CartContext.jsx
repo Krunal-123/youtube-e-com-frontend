@@ -44,7 +44,7 @@ export const CartProvider = ({ children }) => {
       servicesData.splice(0, 6, ...Status.concat(Status2))
       setServices(servicesData);
 
-      console.log(cookies.token);
+      console.log(cookies);
 
       // Check if cookies and token are defined before making API requests
       if (cookies && cookies.token != undefined) {

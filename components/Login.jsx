@@ -63,8 +63,8 @@ export default function SignInSide() {
         });
         setTimeout(() => {
           navigate('/home');
-          window.location.reload();
-        }, 1800);
+          // window.location.reload();
+        }, 1700);
       } else {
         toast.error('INVALID EMAIL OR PASSWORD', {
           position: 'top-center',

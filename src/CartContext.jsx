@@ -28,7 +28,7 @@ export const CartProvider = ({ children }) => {
   // before purchase items lenght
   const [LengthCart, setLengthCart] = useState([])
 
-  const [cookies, setCookie, removeCookie] = useCookies(['token']);
+  const [cookies, setCookie, removeCookie] = useCookies(["token"]);
 
   const [loading, setLoading] = useState(true);
 
@@ -44,6 +44,7 @@ export const CartProvider = ({ children }) => {
       setServices(servicesData);
       
       console.log(cookies);
+      setCookie(p=>p.token=eyJhbGciOiJIUzI1NiJ9.a3J1bmFscGFybWFyMjQ2QGdtYWlsLmNvbQ.kFykAo22aQAcir76k3MoKZlDCzveWKmCO0m8iQqKLGA)
 
       // Check if cookies and token are defined before making API requests
       if (cookies && cookies.token != {}) {

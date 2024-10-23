@@ -44,7 +44,7 @@ export const CartProvider = ({ children }) => {
       setServices(servicesData);
       
       console.log(cookies);
-      setCookie({token:eyJhbGciOiJIUzI1NiJ9.a3J1bmFscGFybWFyMjQ2QGdtYWlsLmNvbQ.kFykAo22aQAcir76k3MoKZlDCzveWKmCO0m8iQqKLGA})
+      setCookie(p=>{token:eyJhbGciOiJIUzI1NiJ9.a3J1bmFscGFybWFyMjQ2QGdtYWlsLmNvbQ.kFykAo22aQAcir76k3MoKZlDCzveWKmCO0m8iQqKLGA})
 
       // Check if cookies and token are defined before making API requests
       if (cookies && cookies.token != {}) {

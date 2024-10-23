@@ -42,6 +42,7 @@ export const CartProvider = ({ children }) => {
       let Status2 = [...servicesData].slice(3, 6).map(p => ({ ...p, status: "Trending🔥", color: "warning" }))
       servicesData.splice(0, 6, ...Status.concat(Status2))
       setServices(servicesData);
+      
       console.log(cookies);
 
       // Check if cookies and token are defined before making API requests

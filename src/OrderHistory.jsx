@@ -134,7 +134,7 @@ const OrderHistory = () => {
                               component="img"
                               image={item.img}
                               alt={item.name}
-                              style={{ width: 100, height: 100 }}
+                              className="md:w-[100px] md:h-[100px] sm:h-[50px] sm:h=[50px]"
                             />
                             <Typography variant="body2">
                               <span className='font-bold'> {item.title}</span>

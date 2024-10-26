@@ -30,9 +30,6 @@ export const CartProvider = ({ children }) => {
 
   const [cookies, setCookie, removeCookie] = useCookies(['token']);
 
-  const [loading, setLoading] = useState(true);
-
-  // user[0]?.myfavourite.length
   // Fetch services and user data
   const fetchData = async () => {
     axios.defaults.withCredentials = true;
@@ -44,11 +41,8 @@ export const CartProvider = ({ children }) => {
       servicesData.splice(0, 6, ...Status.concat(Status2))
       setServices(servicesData);
 
-      console.log(cookies);
-
       // Check if cookies and token are defined before making API requests
       if (cookies && cookies.token != undefined) {
-        console.log('cookie pass');
         const userResponse = await axios.post("https://youtube-e-com-backend.onrender.com/addcart/user", { cookies });
         // Ensure that userResponse and its properties are defined before accessing them
         if (userResponse.data && userResponse.data[0] && userResponse.data[0].addcart) {
@@ -57,29 +51,21 @@ export const CartProvider = ({ children }) => {
           setCartItems(userResponse.data[0].addcart.length);
         }
       } else {
-        console.log(222);
         Navigate("/login")
       }
     } catch (error) {
       console.error("Error fetching data:", error);
       // Additional error handling can be implemented here if needed
-    } finally {
-      setLoading(false);
     }
   };
 
   useEffect(() => {
     fetchData();
-    console.log("check");
   }, [cookies, cartItems, fav, add]); // Removed cartItems from dependency to avoid infinite loop
 
   return (
     <CartContext.Provider value={{ cartItems, setCartItems, services, setServices, user, setUser, cookies, removeCookie, fav, setFav, open, setOpen, setAdd, isExploding, setIsExploding, LightMode, setLightMode, LengthCart, setLengthCart }}>
-      {loading ?
-        <div className='container text-center h-[100vh] flex justify-center items-center'>
-          <Spinner />
-        </div>
-        : children}
+      {children}
     </CartContext.Provider>
   );
 };

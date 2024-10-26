@@ -11,7 +11,6 @@ export default function () {
     const [cookies] = useCookies(["token"])
     useEffect(() => {
         if (!cookies.token) {
-            console.log(111);
             Navigate('/login')
         }
         else {

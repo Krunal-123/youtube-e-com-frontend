@@ -10,7 +10,7 @@ const MobileMenu = ({ setCustom }) => {
   let navigate = useNavigate();
   const { LightMode } = useCart()
   return (
-    <div className={`flex justify-around items-cente ${LightMode ? "bg-dark text-light" : "bg-white text-gray-600"} shadow-md fixed bottom-0 left-0 right-0 z-50 p-2 md:hidden`}>
+    <div className={`flex justify-around items-cente ${LightMode ? "bg-gray-950 text-white" : "bg-white text-gray-600"} shadow-md fixed bottom-0 left-0 right-0 z-50 p-2 md:hidden`}>
       <ListItem button onClick={() => navigate('/home')} className="flex flex-col items-center">
         <HomeIcon className="text-blue-600" />
         <ListItemText primary="Home" className="text-sm" />

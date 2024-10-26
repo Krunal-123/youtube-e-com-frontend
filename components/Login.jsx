@@ -15,6 +15,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useCookies } from 'react-cookie';
 
 function Copyright(props) {
   return (
@@ -33,6 +34,7 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function SignInSide() {
+  const [cookie, setCookie] = useCookies()
   const[check,setCheck]=React.useState(false)
   let remember_val=check?"remember":"not remember"
   let navigate = useNavigate();
@@ -49,23 +51,7 @@ export default function SignInSide() {
 
     try {
       const res = await axios.post('https://youtube-e-com-backend.onrender.com/login', data);
-      console.log(res);
-      if (res.data === 'ok') {
-        toast('WELCOME 🙏', {
-          position: 'top-center',
-          autoClose: 1500,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: false,
-          draggable: true,
-          progress: undefined,
-          theme: 'light',
-        });
-        setTimeout(() => {
-          navigate('/home');
-          window.location.reload();
-        }, 1700);
-      } else {
+      if (res.data === 'Invalid credentials') {
         toast.error('INVALID EMAIL OR PASSWORD', {
           position: 'top-center',
           autoClose: 2000,
@@ -76,6 +62,28 @@ export default function SignInSide() {
           progress: undefined,
           theme: 'light',
         });
+      }
+      else {
+        toast('WELCOME 🙏', {
+          position: 'top-center',
+          autoClose: 1500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: 'light',
+        });
+        if (remember.value == 'remember') {
+          setCookie('token', res.data, { maxAge: 28 * 60 * 60 * 1000 })
+        }
+        else {
+          setCookie('token', res.data)
+        }
+        setTimeout(() => {
+          navigate('/home');
+          window.location.reload();
+        }, 1700);
       }
     } catch (error) {
       console.error('An error occurred during login:', error);

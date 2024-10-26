@@ -24,14 +24,14 @@ export default function Carousel() {
         <img src="https://img.freepik.com/free-psd/festival-lights-celebration-youtube-banner_23-2150854513.jpg?t=st=1729951052~exp=1729954652~hmac=5fcd5d6e7c8797eaa6b11dfa45f77b21a2ae978659b014a18b70b115ee89c883&w=1380" alt="Carousel Slide 1" className='h-[400px] border-0 rounded' />
         <img src="https://img.freepik.com/free-psd/food-vlogger-youtube-banner_23-2148959988.jpg?t=st=1729950949~exp=1729954549~hmac=1d4402ffc3a92b6e65dbff7074b32edbae24b149e4ca575b80047cafdf3806b4&w=1380" alt="Carousel Slide 2" className='h-[400px] rounded border-0' />
         <img src="https://img.freepik.com/free-psd/diwali-celebration-youtube-banner-template_23-2150808295.jpg?t=st=1729951122~exp=1729954722~hmac=58505bef5053bbed89466d3701ab54bce1b4ba346ce5404588fecb42fa6de82b&w=1380" alt="Carousel Slide 3" className='h-[400px] rounded border-0' />
-        <img src="https://www.freepik.com/free-psd/halloween-celebration-youtube-banner_63464990.htm#fromView=search&page=4&position=49&uuid=d4d1abc3-84e7-4707-a542-825fd555f744" alt="Carousel Slide 3" className='h-[400px] rounded border-0' />
-        <img src="https://www.freepik.com/free-psd/halloween-celebration-youtube-banner_60758431.htm#fromView=search&page=5&position=12&uuid=d4d1abc3-84e7-4707-a542-825fd555f744" alt="Carousel Slide 3" className='h-[400px] rounded border-0' />
+        <img src="https://img.freepik.com/free-psd/halloween-celebration-youtube-banner_23-2150735603.jpg?t=st=1729951678~exp=1729955278~hmac=07e786dcacb26297d2cf37619712e63ce057b5aa3b9fba8d165b16b63556ea57&w=1380" alt="Carousel Slide 3" className='h-[400px] rounded border-0' />
+        <img src="https://img.freepik.com/free-psd/halloween-celebration-youtube-banner_23-2150706117.jpg?t=st=1729951678~exp=1729955278~hmac=36e97d992c453d6da4c92bccb15177944f80886b1f4af37e42faf01ebed3ba8b&w=1380" alt="Carousel Slide 3" className='h-[400px] rounded border-0' />
         <img src="https://img.freepik.com/free-psd/bubble-tea-youtube-channel-art-template-design_23-2150135968.jpg?t=st=1729951383~exp=1729954983~hmac=63041d89017e837d079816af9653b6545a206de305ede540919d9f4c5c4dfa11&w=1380" alt="Carousel Slide 3" className='h-[400px] rounded border-0' />
       </Flickity>
 
       {/* APP render */}
       <Flickity
-        className={'carousel mt-4 w-100 h-[250px] border-0 md:hidden'}  // Custom class for styling
+        className={'carousel mt-4 w-100 h-[240px] border-0 md:hidden'}  // Custom class for styling
         elementType={'div'}     // The type of container element (div)
         options={flickityOptions}  // Flickity options
         disableImagesLoaded={false} // Wait until all images are loaded
@@ -41,8 +41,8 @@ export default function Carousel() {
         <img src="https://img.freepik.com/free-psd/festival-lights-celebration-youtube-banner_23-2150854513.jpg?t=st=1729951052~exp=1729954652~hmac=5fcd5d6e7c8797eaa6b11dfa45f77b21a2ae978659b014a18b70b115ee89c883&w=1380" alt="Carousel Slide 1" className='h-[400px] border-0 rounded' />
         <img src="https://img.freepik.com/free-psd/food-vlogger-youtube-banner_23-2148959988.jpg?t=st=1729950949~exp=1729954549~hmac=1d4402ffc3a92b6e65dbff7074b32edbae24b149e4ca575b80047cafdf3806b4&w=1380" alt="Carousel Slide 2" className='h-[400px] rounded border-0' />
         <img src="https://img.freepik.com/free-psd/diwali-celebration-youtube-banner-template_23-2150808295.jpg?t=st=1729951122~exp=1729954722~hmac=58505bef5053bbed89466d3701ab54bce1b4ba346ce5404588fecb42fa6de82b&w=1380" alt="Carousel Slide 3" className='h-[400px] rounded border-0' />
-        <img src="https://www.freepik.com/free-psd/halloween-celebration-youtube-banner_63464990.htm#fromView=search&page=4&position=49&uuid=d4d1abc3-84e7-4707-a542-825fd555f744" alt="Carousel Slide 3" className='h-[400px] rounded border-0' />
-        <img src="https://www.freepik.com/free-psd/halloween-celebration-youtube-banner_60758431.htm#fromView=search&page=5&position=12&uuid=d4d1abc3-84e7-4707-a542-825fd555f744" alt="Carousel Slide 3" className='h-[400px] rounded border-0' />
+        <img src="https://img.freepik.com/free-psd/halloween-celebration-youtube-banner_23-2150735603.jpg?t=st=1729951678~exp=1729955278~hmac=07e786dcacb26297d2cf37619712e63ce057b5aa3b9fba8d165b16b63556ea57&w=1380" alt="Carousel Slide 3" className='h-[400px] rounded border-0' />
+        <img src="https://img.freepik.com/free-psd/halloween-celebration-youtube-banner_23-2150706117.jpg?t=st=1729951678~exp=1729955278~hmac=36e97d992c453d6da4c92bccb15177944f80886b1f4af37e42faf01ebed3ba8b&w=1380" alt="Carousel Slide 3" className='h-[400px] rounded border-0' />
         <img src="https://img.freepik.com/free-psd/bubble-tea-youtube-channel-art-template-design_23-2150135968.jpg?t=st=1729951383~exp=1729954983~hmac=63041d89017e837d079816af9653b6545a206de305ede540919d9f4c5c4dfa11&w=1380" alt="Carousel Slide 3" className='h-[400px] rounded border-0' />
       </Flickity>
     </>

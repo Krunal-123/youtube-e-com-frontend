@@ -130,9 +130,8 @@ const OrderHistory = () => {
                       <>
                         <Grid item xs={12} key={id}>
                           <Box className={`flex justify-between md:px-5 px-0`} alignItems="center">
-                            <CardMedia
-                              component="img"
-                              image={item.img}
+                            <img
+                              src={item.img}
                               alt={item.name}
                               className="md:h-[100px] md:w-[100px] h-[55px] w-[55px]"
                             />
@@ -144,7 +143,7 @@ const OrderHistory = () => {
                               Paid Price: ₹<span className='text-red-500'>{Math.floor(item.price / 2).toLocaleString('en-IN')}</span>
                             </Typography>
                             <Typography variant="body2">
-                              Items ID: <br /><span className=''> {item._id}</span>
+                              Items ID: <br /><span> {item._id}</span>
                             </Typography>
                           </Box>
                         </Grid>

@@ -129,7 +129,7 @@ const OrderHistory = () => {
                     {selectedOrder.id?.map((item, id) => (
                       <>
                         <Grid item xs={12} key={id}>
-                          <Box className={`flex justify-between px-5 `} alignItems="center">
+                          <Box className={`flex justify-between md:px-5 sm:px-1`} alignItems="center">
                             <CardMedia
                               component="img"
                               image={item.img}
@@ -156,9 +156,9 @@ const OrderHistory = () => {
                       </>
                     ))}
                   </Grid>
-                  <Box mt={2} className="">
                     <hr />
-                    <h2 className="my-2  bg-no-repeat bg-cover bg-[url('https://www.psdstamps.com/wp-content/uploads/2022/04/round-youtube-stamp-png.png')]">(Incl All Taxes)</h2>
+                  <Box className="mt-2 sm:px-2">
+                    <h2 className="my-2">(Incl All Taxes)</h2>
                     <Typography variant="h6" className='flex justify-start items-center'>
                       Paid Amount: ₹{selectedOrder.amount}
                       <img src='https://www.psdstamps.com/wp-content/uploads/2022/04/round-youtube-stamp-png.png' className='h-[90px] w-[145px] -rotate-12' />

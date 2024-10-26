@@ -13,7 +13,6 @@ function ContactUs() {
   async function handleSubmit(e) {
     e.preventDefault()
     const { Name, Number, Email, Subject, Message, optional } = e.target
-    console.log(e.target);
     const data = {
       Name: Name.value,
       Phone: Number.value,

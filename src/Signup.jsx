@@ -50,8 +50,7 @@ export default function SignUp() {
   let navigate = useNavigate()
   const handleSubmit = (event) => {
     event.preventDefault();
-    const { firstName, lastName, email, number, password, confirm, gender, check } = event.target
-    // console.log(firstName.value, lastName.value, number.value, email.value, gender.value, password.value, confirm.value, check.value);
+    const { firstName, lastName, email, number, password, confirm, gender } = event.target
     if (number.value.length !== 10) {
       errorToast('Invalid phone number! Please Enter the 10-digit!', 4000);
       return;
@@ -60,7 +59,6 @@ export default function SignUp() {
       let data = { firstName: firstName.value, lastName: lastName.value, number: number.value, email: email.value, gender: gender.value, password: password.value, confirm: confirm.value }
       axios.post('https://youtube-e-com-backend.onrender.com/signup', data)
         .then((res) => {
-          console.log(res);
           if (res.data == 'user_already_exist') {
             errorToast('Email Already Exist', 2000)
           } else {

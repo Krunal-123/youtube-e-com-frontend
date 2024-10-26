@@ -106,12 +106,12 @@ function BasicExample() {
                                 disabled={btn}
                                 sx={{ mt: 3, py: 1, px: 3 }}
                             >
-                            <span className={`text-${LightMode?"slate-50":"gray-500"} flex text-lg`}>
-                                <FaShoppingCart className='mt-1'/>
-                                <span className='ml-2'>
-                                {purchased ? 'Purchased Already' : btn ? 'Added to Cart' : 'Add to Cart'}
+                                <span className={`text-${LightMode ? "slate-50" : "gray-500"} flex text-lg`}>
+                                    <FaShoppingCart className='mt-1' />
+                                    <span className='ml-2'>
+                                        {purchased ? 'Purchased Already' : btn ? 'Added to Cart' : 'Add to Cart'}
+                                    </span>
                                 </span>
-                            </span>
                             </Button>
                             {purchased && (
                                 <Box mt={2}>
@@ -125,7 +125,7 @@ function BasicExample() {
                 </Grid>
             </Container>
 
-            {Data.reviews && <ReviewPage data={Data.reviews} user={user}/>}
+            {Data.reviews && <ReviewPage data={Data.reviews} user={user} />}
 
             <OrderModal open={open} onClose={() => setOpen(false)}>
                 <ModalContent>

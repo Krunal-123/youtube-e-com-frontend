@@ -35,8 +35,8 @@ const defaultTheme = createTheme();
 
 export default function SignInSide() {
   const [cookie, setCookie] = useCookies()
-  const[check,setCheck]=React.useState(false)
-  let remember_val=check?"remember":"not remember"
+  const [check, setCheck] = React.useState(false)
+  let remember_val = check ? "remember" : "not remember"
   let navigate = useNavigate();
 
   axios.defaults.withCredentials = true;
@@ -46,7 +46,7 @@ export default function SignInSide() {
     let data = {
       email: email.value,
       password: password.value,
-      remember:remember.value
+      remember: remember.value
     };
 
     try {
@@ -157,7 +157,7 @@ export default function SignInSide() {
                 sx={{ borderRadius: '8px', backgroundColor: '#f5f5f5' }}
               />
               <FormControlLabel
-                control={<Checkbox checked={check} name="remember" value={remember_val} onChange={()=>setCheck(p=>!p)} color="primary" />}
+                control={<Checkbox checked={check} name="remember" value={remember_val} onChange={() => setCheck(p => !p)} color="primary" />}
                 label="Remember me"
               />
               <Button

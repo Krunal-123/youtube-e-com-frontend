@@ -11,7 +11,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Dropdown from 'react-bootstrap/Dropdown';
 
 export default function ServiceList() {
-  const { services, user,LightMode} = useCart();
+  const { services, user, LightMode } = useCart();
   const [cards, setCards] = useState([]);
 
   // Sort by low to high price
@@ -56,7 +56,7 @@ export default function ServiceList() {
       <Flickty />
       <div className="my-12">
         {cards.length > 0 ? (
-          <h1 className={`mb-4 text-4xl font-extrabold leading-none tracking-tight text-${LightMode?"white":"dark"} md:text-5xl lg:text-6xl text-center`}>
+          <h1 className={`mb-4 text-4xl font-extrabold leading-none tracking-tight text-${LightMode ? "white" : "dark"} md:text-5xl lg:text-6xl text-center`}>
             Our Services
           </h1>
         ) : (

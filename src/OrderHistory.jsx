@@ -20,7 +20,6 @@ const OrderModal = styled(Modal)(({ theme }) => ({
 }));
 
 const ModalContent = styled(Box)(({ theme }) => ({
-  width: '60%',
   backgroundColor: theme.palette.background.paper,
   padding: theme.spacing(2),
   borderRadius: theme.shape.borderRadius,
@@ -69,7 +68,7 @@ const OrderHistory = () => {
       <Container className={`h-[75vh] mt-5 mb-3 px-5 shadow-xl rounded-4 pt-3 ${LightMode ? "bg-gray-900" : "bg-light"}`} maxWidth={'lg'}>
         <h2 className={`text-3xl text-center font-bold mb-2 text-${LightMode ? "white" : "dark"}`}>#Order History</h2>
         <div className='h-[80%] w-[100%] overflow-y-auto'>
-          {[...user[0]?.orderhistory].reverse().map((order,id) => (
+          {[...user[0]?.orderhistory].reverse().map((order, id) => (
             <OrderCard key={id} className='w-[90%] mx-auto my-3'>
               <CardContent className={`${LightMode ? "bg-dark" : "bg-light"} text-${LightMode ? "white" : "dark"}`}>
                 <Box display="flex" justifyContent="space-between" alignItems="center" flexWrap="wrap">
@@ -107,7 +106,7 @@ const OrderHistory = () => {
 
           {selectedOrder && (
             <OrderModal open={open} onClose={handleClose}>
-              <ModalContent className={`${LightMode ? "bg-dark" : "bg-light"} text-${LightMode ? "white" : "dark"}`}>
+              <ModalContent className={`${LightMode ? "bg-dark" : "bg-light"} text-${LightMode ? "white" : "dark"} md:w-[60%] sm:w-[90%]`}>
                 <Typography variant="h6" gutterBottom>
                   Order Details
                 </Typography>
@@ -127,7 +126,7 @@ const OrderHistory = () => {
                   </Typography>
                   <hr className='py-2' />
                   <Grid container spacing={2} className='overflow-y-auto h-[300px] py-5'>
-                    {selectedOrder.id?.map((item,id) => (
+                    {selectedOrder.id?.map((item, id) => (
                       <>
                         <Grid item xs={12} key={id}>
                           <Box className={`flex justify-between px-5 `} alignItems="center">

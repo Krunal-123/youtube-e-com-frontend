@@ -42,23 +42,23 @@ export default function ResetPassword() {
   const handlePasswordReset = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      errorToast("Password Not Match",2000)
+      errorToast("Password Not Match", 2000)
       return;
     }
 
     try {
       const res = await axios.patch('https://youtube-e-com-backend.onrender.com/reset-password', { email, password });
       if (res.data == 'password_reset') {
-        Toast('Password Reset Successfully.',2000)
+        Toast('Password Reset Successfully.', 2000)
         navigate('/login');
         return;
       } else {
-        errorToast('Failed to reset password. Please try again.',2000)
+        errorToast('Failed to reset password. Please try again.', 2000)
         return;
       }
     } catch (error) {
       console.error('An error occurred:', error);
-      errorToast('An error occurred. Please try again later.',2000)
+      errorToast('An error occurred. Please try again later.', 2000)
     }
   };
 

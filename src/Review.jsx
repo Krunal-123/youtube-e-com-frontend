@@ -55,7 +55,7 @@ export default function ReviewPage({ data, user }) {
           color='primary'
           size='large'
         />
-      </Stack> : (<h2 className={`text-center text-2xl font-semibold mb-3 text-${LightMode?"white":"dark"}`}>No Reviews Yet</h2>)}
+      </Stack> : (<h2 className={`text-center text-2xl font-semibold mb-3 text-${LightMode ? "white" : "dark"}`}>No Reviews Yet</h2>)}
     </Container>
   );
 }

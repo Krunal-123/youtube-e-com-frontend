@@ -4,7 +4,7 @@ import { FaUsers, FaLightbulb, FaCogs, FaSmile, FaHistory } from 'react-icons/fa
 import { useCart } from './CartContext';
 
 function AboutUs() {
-  const{LightMode}=useCart()
+  const { LightMode } = useCart()
   return (
     <>
       {/* Header Section */}
@@ -31,7 +31,7 @@ function AboutUs() {
             <h2 className="text-2xl font-bold mb-2">Our Mission</h2>
             <p className={`text-${LightMode ? "white" : "dark"}`}>Our mission is to provide high-quality solutions that make life easier and more enjoyable for our customers. We strive to lead the industry with our innovative ideas.</p>
           </div>
-          
+
           <div className={`shadow-lg p-6 text-center bg-${LightMode ? "dark" : "white"} text-${LightMode ? "white" : "dark"}`}>
             <FaCogs size={50} className="mb-4 text-green-500 mx-auto" />
             <h2 className="text-2xl font-bold mb-2">Our Services</h2>
@@ -138,7 +138,7 @@ function AboutUs() {
         <Row className="my-5">
           <Col md={12} >
             <h2 className={`text-4xl font-bold text-center mb-6 text-${LightMode ? "white" : "dark"}`}>Frequently Asked Questions</h2>
-            <Accordion  data-bs-theme={`${LightMode ? "dark" : "light"}`}>
+            <Accordion data-bs-theme={`${LightMode ? "dark" : "light"}`}>
               <Accordion.Item eventKey="0">
                 <Accordion.Header>What services do you offer?</Accordion.Header>
                 <Accordion.Body>

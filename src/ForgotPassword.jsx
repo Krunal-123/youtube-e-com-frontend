@@ -45,25 +45,25 @@ export default function ForgotPassword() {
     try {
       const res = await axios.post('https://youtube-e-com-backend.onrender.com/send-otp', { email });
       if (res.data === 'User not found') {
-        errorToast('User not found',2000)
+        errorToast('User not found', 2000)
       } else {
         setOTPCHECK(res.data);
         setOtpSent(true);
-        Toast('OTP sent to your email.',2000)
+        Toast('OTP sent to your email.', 2000)
       }
     } catch (error) {
       console.error('An error occurred:', error);
-      errorToast('An error occurred. Please try again later.',1000)
+      errorToast('An error occurred. Please try again later.', 1000)
     }
   };
 
   const handleVerifyOtp = async (e) => {
     e.preventDefault();
     if (otp == otpCheck) {
-      Toast('OTP Match Correctly',1000)
+      Toast('OTP Match Correctly', 1000)
       navigate(`/reset-password/${email}`);
     } else {
-      errorToast('Invalid OTP. Please try again.',2000)
+      errorToast('Invalid OTP. Please try again.', 2000)
     }
   };
 

@@ -256,13 +256,13 @@ export default function PrimarySearchAppBar() {
       <div className="flex-grow w-full shadow-2xl sticky-top">
         <div className={`${LightMode ? "bg-gray-950" : "bg-white"} text-${LightMode ? "white" : "dark"}`}>
           <div className="flex items-center px-3 py-2">
-          <Link to={'/home'}>
-            <img
-              alt="Remy Sharp"
-              src="https://img.icons8.com/?size=100&id=44112&format=png&color=000000"
-              className="w-14 h-14 rounded-full"
-            />
-          </Link>
+            <Link to={'/home'}>
+              <img
+                alt="Remy Sharp"
+                src="https://img.icons8.com/?size=100&id=44112&format=png&color=000000"
+                className="w-14 h-14 rounded-full"
+              />
+            </Link>
 
 
 
@@ -460,12 +460,12 @@ export default function PrimarySearchAppBar() {
                 <button
                   onClick={() => setCustom((previous) => !previous)}
                 >
-                  <MoreIcon/>
+                  <MoreIcon />
                 </button>
 
                 {/* Categories Menu APP*/}
                 <div
-                  className={`absolute z-50 mt-1 right-[0px] top-[50px] ${LightMode?"text-white":"text-dark"} ${LightMode?"bg-dark":"bg-white"} border border-gray-300 rounded-md shadow-lg ${custom ? 'block' : 'hidden'}`}
+                  className={`absolute z-50 mt-1 right-[0px] top-[50px] ${LightMode ? "text-white" : "text-dark"} ${LightMode ? "bg-dark" : "bg-white"} border border-gray-300 rounded-md shadow-lg ${custom ? 'block' : 'hidden'}`}
                   onClick={() => setCustom(false)}
                 >
                   <button className="py-2 px-2 block mx-2 bg-clip-text text-md font-bold hover:text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500" onClick={() => Categoires("editing")}>Editing Services</button>

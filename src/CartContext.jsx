@@ -30,6 +30,7 @@ export const CartProvider = ({ children }) => {
 
   const [cookies, setCookie, removeCookie] = useCookies(['token']);
 
+  const [loading, setLoading] = useState(true);
   // Fetch services and user data
   const fetchData = async () => {
     axios.defaults.withCredentials = true;
@@ -56,6 +57,8 @@ export const CartProvider = ({ children }) => {
     } catch (error) {
       console.error("Error fetching data:", error);
       // Additional error handling can be implemented here if needed
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -65,7 +68,11 @@ export const CartProvider = ({ children }) => {
 
   return (
     <CartContext.Provider value={{ cartItems, setCartItems, services, setServices, user, setUser, cookies, removeCookie, fav, setFav, open, setOpen, setAdd, isExploding, setIsExploding, LightMode, setLightMode, LengthCart, setLengthCart }}>
-      {children}
+      {loading ?
+        <div className='container text-center h-[100vh] flex justify-center items-center'>
+          <Spinner />
+        </div>
+        : children}
     </CartContext.Provider>
   );
 };

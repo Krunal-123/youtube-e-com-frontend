@@ -130,11 +130,10 @@ const OrderHistory = () => {
                       <>
                         <Grid item xs={12} key={id}>
                           <Box className={`flex justify-between md:px-5 sm:px-1`} alignItems="center">
-                            <CardMedia
-                              component="img"
-                              image={item.img}
+                            <img
+                              src={item.img}
                               alt={item.name}
-                              className="md:w-[100px] md:h-[100px] sm:h-[50px] sm:h=[50px]"
+                              className="md:h-[100px] md:w-[100px] sm:h-[50px] sm:w-[50px]"
                             />
                             <Typography variant="body2">
                               <span className='font-bold'> {item.title}</span>

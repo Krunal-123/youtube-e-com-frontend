@@ -106,7 +106,7 @@ const OrderHistory = () => {
 
           {selectedOrder && (
             <OrderModal open={open} onClose={handleClose}>
-              <ModalContent className={`${LightMode ? "bg-dark" : "bg-light"} text-${LightMode ? "white" : "dark"} md:w-[60%] sm:w-[90%]`}>
+              <ModalContent className={`${LightMode ? "bg-dark" : "bg-light"} text-${LightMode ? "white" : "dark"} md:w-[60%] w-[95%]`}>
                 <Typography variant="h6" gutterBottom>
                   Order Details
                 </Typography>
@@ -129,24 +129,20 @@ const OrderHistory = () => {
                     {selectedOrder.id?.map((item, id) => (
                       <>
                         <Grid item xs={12} key={id}>
-                          <Box className={`flex justify-between md:px-5 sm:px-1`} alignItems="center">
-                            <img
-                              src={item.img}
+                          <Box className={`flex justify-between md:px-5 px-0`} alignItems="center">
+                            <CardMedia
+                              component="img"
+                              image={item.img}
                               alt={item.name}
-                              className="md:h-[100px] md:w-[100px] sm:h-[50px] sm:w-[50px]"
+                              className="md:h-[100px] md:w-[100px] h-[55px] w-[55px]"
                             />
                             <Typography variant="body2">
                               <span className='font-bold'> {item.title}</span>
                             </Typography>
-                            <Box>
-                              <Typography variant="body2">{item.name}</Typography>
-                              <Typography variant="body2" className='line-through'>
-                                Price: ₹{item.price.toLocaleString('en-IN')}
-                              </Typography>
-                              <Typography variant>
-                                Paid Price: ₹<span className='text-red-500'>{Math.floor(item.price / 2).toLocaleString('en-IN')}</span>
-                              </Typography>
-                            </Box>
+                            <Typography variant="body2" >
+                              Price: ₹<span className='line-through'>{item.price.toLocaleString('en-IN')}</span><br />
+                              Paid Price: ₹<span className='text-red-500'>{Math.floor(item.price / 2).toLocaleString('en-IN')}</span>
+                            </Typography>
                             <Typography variant="body2">
                               Items ID: <br /><span className=''> {item._id}</span>
                             </Typography>
@@ -155,8 +151,8 @@ const OrderHistory = () => {
                       </>
                     ))}
                   </Grid>
-                    <hr />
-                  <Box className="mt-2 sm:px-2">
+                  <hr />
+                  <Box className="mt-2 px-2">
                     <h2 className="my-2">(Incl All Taxes)</h2>
                     <Typography variant="h6" className='flex justify-start items-center'>
                       Paid Amount: ₹{selectedOrder.amount}

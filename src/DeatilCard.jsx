@@ -71,7 +71,7 @@ function BasicExample() {
             <Container sx={{ my: 8 }} className={`text-${LightMode ? "white" : "dark"}`}>
                 <Grid container spacing={4}>
                     <Grid item xs={12} md={6}>
-                        <Box component="img" src={Data.img} alt={Data.title} sx={{ height: "550px", width: '100%', borderRadius: 2 }} className='shadow-xl' />
+                        <Box component="img" src={Data.img} alt={Data.title} className='shadow-xl h-[450px] md:h-[550px] w-100 rounded' />
                     </Grid>
                     <Grid item xs={12} md={6}>
                         <Box>

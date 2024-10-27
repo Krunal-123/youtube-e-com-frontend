@@ -55,39 +55,16 @@ function AboutUs() {
 
         {/* Team Members Section */}
         <div className="mb-12">
-          <h2 className={`text-4xl font-bold text-center mb-6 text-${LightMode ? "white" : "dark"}`}>Meet Our Team</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-            <div className={`shadow-lg rounded-lg overflow-hidden text-${LightMode ? "white" : "dark"} bg-${LightMode ? "dark" : "white"}`}>
-              <img src={'https://th.bing.com/th/id/OIP.OWHqt6GY5jrr7ETvJr8ZXwHaHa?rs=1&pid=ImgDetMain'} alt="Rishi Mohinani" className="h-80 w-full object-cover" />
-              <div className="p-6 text-center">
-                <h3 className="text-2xl font-bold">Rishi Mohinani</h3>
-                <p className="text-blue-300">MEAN Developer</p>
-                <img src="https://ahex.co/wp-content/uploads/2022/06/MeanStack.png" className="h-10 mx-auto mt-4" alt="Stack" />
-                {/* <p className="text-gray-600">Position 2</p> */}
-              </div>
-
-            </div>
-            <div className={`shadow-lg rounded-lg overflow-hidden bg-${LightMode ? "dark" : "white"} text-${LightMode ? "white" : "dark"}`}>
-              <img src={'https://th.bing.com/th/id/OIP.OWHqt6GY5jrr7ETvJr8ZXwHaHa?rs=1&pid=ImgDetMain'} alt="Krunal Parmar" className="h-80 w-full object-cover" />
+          <h2 className={`text-4xl font-bold text-center mb-6 text-${LightMode ? "white" : "dark"}`}>Meet To Our Team</h2>
+          <div className="flex justify-around">
+            <div className={`shadow-lg rounded-lg overflow-hidden bg-${LightMode ? "dark" : "white"} text-${LightMode ? "white" : "dark"} w-[400px]`}>
+              <img src={'https://res.cloudinary.com/dlhikwznm/image/upload/v1730019097/krunali_ipzrdb.jpg'} alt="Krunal Parmar" className="h-80 w-full object-fill" />
               <div className="p-6 text-center">
                 <h3 className="text-2xl font-bold">Krunal Parmar</h3>
-                <p className="text-blue-500">Full Stack Developer</p>
+                <p className="text-blue-400 font-bold">Full Stack Developer</p>
                 <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--6rc65PKG--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6uua71pthj5ricfxhh3m.png" className="h-10 mx-auto mt-4" alt="Stack" />
-                {/* <p className="text-gray-600">Position 1</p> */}
               </div>
             </div>
-
-            <div className={`shadow-lg rounded-lg overflow-hidden bg-${LightMode ? "dark" : "white"} text-${LightMode ? "white" : "dark"}`}>
-              <img src={'https://th.bing.com/th/id/OIP.OWHqt6GY5jrr7ETvJr8ZXwHaHa?rs=1&pid=ImgDetMain'} alt="Sahil Chandnani" className="h-80 w-full object-cover" />
-              <div className="p-6 text-center">
-                <h3 className="text-2xl font-bold">Sahil Chandnani</h3>
-                <p className="text-gray-600">Web Designer</p>
-                <img src="https://mir-s3-cdn-cf.behance.net/projects/404/a015b0111578897.Y3JvcCw1NDgsNDI4LDMzNiwxOTQ.png" className="h-10 mx-auto mt-4" alt="Stack" />
-                {/* <p className="text-gray-600">Position 3</p> */}
-              </div>
-            </div>
-
           </div>
         </div>
 

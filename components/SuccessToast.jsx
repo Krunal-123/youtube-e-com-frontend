@@ -1,8 +1,6 @@
-import { toast } from "react-toastify";
-import { useCart } from "../src/CartContext";
+import { toast } from "react-toastify";0
 
 export function Toast(msg, sec) {
-  const { LightMode } = useCart()
   return (
     toast.success(msg, {
       position: 'top-center',
@@ -12,7 +10,7 @@ export function Toast(msg, sec) {
       pauseOnHover: false,
       draggable: true,
       progress: undefined,
-      theme: `${LightMode ? "dark" : "light"}`
+      theme: `light`
     })
   )
 }

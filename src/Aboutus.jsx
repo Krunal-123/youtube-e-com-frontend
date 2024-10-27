@@ -55,7 +55,7 @@ function AboutUs() {
 
         {/* Team Members Section */}
         <div className="mb-12">
-          <h2 className={`text-4xl font-bold text-center mb-6 text-${LightMode ? "white" : "dark"}`}>Meet To Our Team</h2>
+          <h2 className={`text-4xl font-bold text-center mb-6 text-${LightMode ? "white" : "dark"}`}>Meet To Our Developer</h2>
           <div className="flex justify-around">
             <div className={`shadow-lg rounded-lg overflow-hidden bg-${LightMode ? "dark" : "white"} text-${LightMode ? "white" : "dark"} w-[400px]`}>
               <img src={'https://res.cloudinary.com/dlhikwznm/image/upload/v1730019097/krunali_ipzrdb.jpg'} alt="Krunal Parmar" className="h-80 w-full object-fill" />

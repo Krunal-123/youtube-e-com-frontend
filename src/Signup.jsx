@@ -6,21 +6,25 @@ import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
-import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import { errorToast } from '../components/ErrorToast';
+import { Toast } from '../components/SuccessToast';
 
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="">
+      <Link color="inherit" href="https://mui.com/">
         Youtube E-com
       </Link>{' '}
       {new Date().getFullYear()}
@@ -29,150 +33,178 @@ function Copyright(props) {
   );
 }
 
-// Default theme (kept unchanged)
-const defaultTheme = createTheme();
+// TODO remove, this demo shouldn't need to reset the theme.
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
 
-export default function SignInSide() {
-  const [check, setCheck] = React.useState(false)
-  let remember_val = check ? "remember" : "not remember"
-  let navigate = useNavigate();
+export default function SignUp() {
 
-  axios.defaults.withCredentials = true;
-  const handleSubmit = async (event) => {
+  const [age, setAge] = React.useState('');
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
+  let navigate = useNavigate()
+  const handleSubmit = (event) => {
     event.preventDefault();
-    const { email, password, remember } = event.target;
-    let data = {
-      email: email.value,
-      password: password.value,
-      remember: remember.value
-    };
-
-    try {
-      const res = await axios.post('https://youtube-e-com-backend.onrender.com/signup', data);
-      if (res.data === 'ok') {
-        toast('WELCOME 🙏', {
-          position: 'top-center',
-          autoClose: 1500,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: false,
-          draggable: true,
-          progress: undefined,
-          theme: 'light',
-        });
-        setTimeout(() => {
-          navigate('/home');
-          window.location.reload();
-        }, 1800);
-      } else {
-        toast.error('INVALID EMAIL OR PASSWORD', {
-          position: 'top-center',
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: false,
-          draggable: true,
-          progress: undefined,
-          theme: 'light',
-        });
-      }
-    } catch (error) {
-      console.error('An error occurred during login:', error);
-      toast.error('An error occurred. Please try again later.');
+    const { firstName, lastName, email, number, password, confirm, gender } = event.target
+    if (number.value.length !== 10) {
+      errorToast('Invalid phone number! Please Enter the 10-digit!', 4000);
+      return;
+    }
+    if (password.value == confirm.value) {
+      let data = { firstName: firstName.value, lastName: lastName.value, number: number.value, email: email.value, gender: gender.value, password: password.value, confirm: confirm.value }
+      axios.post('https://youtube-e-com-backend.onrender.com/signup', data)
+        .then((res) => {
+          if (res.data == 'user_already_exist') {
+            errorToast('Email Already Exist', 2000)
+          } else {
+            navigate('/login')
+            Toast('Account Created Successfully🎉', 2000)
+          }
+        })
+    }
+    else {
+      errorToast('Check Password Again', 1200)
     }
   };
 
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <Grid container component="main" sx={{ height: '100vh' }}>
-        <CssBaseline />
-        <Grid
-          item
-          xs={false}
-          sm={4}
-          md={7}
-          sx={{
-            backgroundImage:
-              'url("https://cdn.dribbble.com/users/1369921/screenshots/3699553/yt-new-button-yoodle.gif")',
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundColor: '#282c34',
-          }}
-        />
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square sx={{ background: 'linear-gradient(to bottom, #3f51b5, #9c27b0)' }}>
+    <div className="text-dark pt-2 bg-[length:100%_60%] md:bg-[length:100%_100%] bg-no-repeat bg-center bg-[url('https://cdn.dribbble.com/users/6750733/screenshots/18300442/gif1.gif')]">
+      <ThemeProvider theme={darkTheme}>
+        <Container component="main" maxWidth="xs">
+          <CssBaseline />
           <Box
             sx={{
-              my: 8,
-              mx: 4,
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              backgroundColor: 'white',
-              borderRadius: '12px',
-              boxShadow: '0 4px 10px rgba(0,0,0,0.3)',
-              p: 4,
             }}
           >
             <Avatar
-              alt="Logo"
+              alt="Remy Sharp"
               src="https://media.tenor.com/q3NBbq09nuYAAAAC/youtube-logo.gif"
-              sx={{ width: 80, height: 80, mb: 2 }}
+              sx={{ width: 56, height: 56 }}
+              className='mt-2'
             />
-            <Typography component="h1" variant="h5" sx={{ fontWeight: 'bold', color: '#3f51b5' }}>
-              Sign in
+            <Typography component="h1" variant="h5">
+              Sign up
             </Typography>
+            <form onSubmit={handleSubmit} className='max-md:my-3 md:my-5'>
+              <Grid container spacing={2}>
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    autoComplete="given-name"
+                    name="firstName"
+                    fullWidth
+                    id="firstName"
+                    label="First Name"
+                    required
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    fullWidth
+                    id="lastName"
+                    label="Last Name"
+                    name="lastName"
+                    required
+                    autoComplete=""
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    fullWidth
+                    id="phone"
+                    label="Phone No"
+                    name="number"
+                    required
+                    autoComplete="phone"
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    fullWidth
+                    id="email"
+                    label="Email Address"
+                    name="email"
+                    required
+                    autoComplete="email"
+                  />
+                </Grid>
 
-            {/* form */}
-            <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3, width: '100%' }}>
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
-                autoFocus
-                sx={{ borderRadius: '8px', backgroundColor: '#f5f5f5' }}
-              />
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-                sx={{ borderRadius: '8px', backgroundColor: '#f5f5f5' }}
-              />
-              <FormControlLabel
-                control={<Checkbox checked={check} name="remember" value={remember_val} onChange={() => setCheck(p => !p)} color="primary" />}
-                label="Remember me"
-              />
+                <Grid item xs={12}>
+
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">Gender</InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      name='gender'
+                      value={age}
+                      label="Gender"
+                      onChange={handleChange}
+                      required
+                    >
+                      <MenuItem value={"Male"}>Male</MenuItem>
+                      <MenuItem value={"Female"}>Female</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Grid>
+
+                <Grid item xs={12}>
+                  <TextField
+                    fullWidth
+                    name="password"
+                    label="Password"
+                    type="password"
+                    id="password"
+                    autoComplete="password"
+                    required
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    fullWidth
+                    name="Confirm"
+                    label="Confirm password"
+                    type="password"
+                    id="confirm"
+                    autoComplete="password"
+                    required
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <FormControlLabel
+                    required
+                    control={<Checkbox value="allowExtraEmails" name="check" color="primary" />}
+                    label="I want to receive inspiration, marketing promotions and updates via email."
+                  />
+                </Grid>
+              </Grid>
               <Button
                 type="submit"
                 fullWidth
                 variant="contained"
-                color="primary"
-                sx={{ mt: 3, mb: 2, py: 1.5, borderRadius: '8px', textTransform: 'none', backgroundColor: '#3f51b5', ':hover': { backgroundColor: '#303f9f' } }}
+                sx={{ mt: 3, mb: 2 }}
               >
-                Sign In
+                Sign Up
               </Button>
-              <Grid container className='mt-5'>
-                <Grid item lg>
-                  <Link href="forgot-password" variant="body1" sx={{ color: '#3f51b5' }}>Forgot password? </Link>
-                </Grid>
-                <Grid item>
-                  <Link href="/signup" variant="body1" sx={{ color: '#3f51b5' }}> Don't have an account? Sign Up</Link>
-                </Grid>
+            </form>
+            <Grid container className='flex justify-center'>
+              <Grid item>
+                <Link href="/login" variant="body1">
+                  Already have an account? Sign in
+                </Link>
               </Grid>
-              <Copyright sx={{ mt: 5 }} />
-            </Box>
+            </Grid>
           </Box>
-        </Grid>
-      </Grid>
-    </ThemeProvider>
+          <Copyright sx={{ my: 2 }} />
+        </Container>
+      </ThemeProvider>
+    </div>
   );
 }

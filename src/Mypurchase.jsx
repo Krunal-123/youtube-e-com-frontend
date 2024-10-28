@@ -3,7 +3,6 @@ import { Card, Col, Row, Button, Modal, Badge } from 'react-bootstrap';
 import { useCart } from './CartContext';
 import { MDBContainer } from 'mdb-react-ui-kit';
 import { Container } from '@mui/material';
-import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Link } from 'react-router-dom';
 import ConfettiExplosion from 'react-confetti-explosion';
 
@@ -29,11 +28,11 @@ function GridExample() {
 
   if (!user || user[0].myitems == 0) {
     return (
-      <section className="h-[550px] bg-[length:100%_100%] bg-no-repeat bg-center bg-[url('https://www.pngkey.com/png/detail/365-3654131_cart-empty-image-your-cart-is-empty.png')]">
+      <section className="h-[65vh] md:h-[550px] bg-[length:100%_100%] bg-no-repeat bg-center bg-[url('https://www.pngkey.com/png/detail/365-3654131_cart-empty-image-your-cart-is-empty.png')]">
         <MDBContainer className="py-5">
           <div className="text-center my-40 align-items-center">
-            <h5 className='text-red-500 text-7xl mb-5 font-bold d-flex justify-content-center font-mono'>
-              <AiOutlineShoppingCart />You Haven't Buy Anything
+            <h5 className='text-red-500 text-5xl md:text-7xl mb-5 font-bold d-flex justify-content-center font-mono'>
+              You Haven't Buy Anything
             </h5>
             <Link to={'/home'}>
               <Button className='bg-primary hover:opacity-[0.9]'>Continue Browsing</Button>

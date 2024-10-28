@@ -17,10 +17,9 @@ function GridExample() {
   }
   if (!user || user[0].myfavourites <= 0) {
     return (
-      <section className="h-[550px] bg-[length:60%_90%] bg-no-repeat bg-center bg-[url('https://cdn.dribbble.com/users/12570/screenshots/13987694/media/1635918fab6854e489723a301619b7b2.jpg?compress=1&resize=400x300')]">
+      <section className="max-sm:h-[550px] h-[70vh] md:h-[550px] bg-[length:100%_100%] md:bg-[length:60%_90%] ] bg-no-repeat bg-center bg-[url('https://cdn.dribbble.com/users/12570/screenshots/13987694/media/1635918fab6854e489723a301619b7b2.jpg?compress=1&resize=400x300')]">
         <MDBContainer className="py-5">
           <div className="text-center my-60 align-items-center">
-            {/* <h5 className='text-red-500 text-7xl mb-5 font-bold d-flex justify-content-center'><AiOutlineShoppingCart/>&nbsp; Yet, Not Purchase Anyting</h5> */}
             <Link to={'/home'}>
               <Button className='bg-primary hover:opacity-[0.8]'>Continue Browsing</Button>
             </Link>

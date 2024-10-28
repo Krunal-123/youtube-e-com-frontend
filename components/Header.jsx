@@ -416,10 +416,12 @@ export default function PrimarySearchAppBar() {
                 <div
                   className={`absolute z-50 right-[70px] top-[60px] bg-${LightMode ? "dark" : "white"} border border-gray-300 rounded-md shadow-lg ${ProfileHover ? 'block' : 'hidden'} border border-gray-300 rounded-md shadow-lg ${ProfileHover ? 'block' : 'hidden'}`}
                 >
+                  <div className="py-2 px-2 block mx-2 bg-clip-text text-lg font-bold text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">Hi, {user[0]?.firstName.toUpperCase()}
+                  </div>
                   <div>
                     {/* Toggle Mode */}
                     <span className="py-1 px-2 mx-1 bg-clip-text text-md font-bold hover:text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
-                      LightMode
+                      DarkMode
                     </span>
                     <CustomizedSwitches />
                   </div>

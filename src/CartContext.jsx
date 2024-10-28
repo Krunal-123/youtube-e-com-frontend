@@ -50,6 +50,7 @@ export const CartProvider = ({ children }) => {
           setUser(userResponse.data);
           setFav(userResponse.data[0].myfavourites.length);
           setCartItems(userResponse.data[0].addcart.length);
+          setLightMode(userResponse.data[0].lightMode)
         }
       } else {
         Navigate("/login")
@@ -61,6 +62,12 @@ export const CartProvider = ({ children }) => {
       setLoading(false);
     }
   };
+  async function mode(){
+    await axios.post("https://youtube-e-com-backend.onrender.com/light", { email: user?.[0].email , mode: LightMode })
+  }
+  useEffect(()=>{
+    mode()
+  },[LightMode])
 
   useEffect(() => {
     fetchData();

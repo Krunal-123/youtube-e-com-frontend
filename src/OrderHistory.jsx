@@ -41,10 +41,10 @@ const OrderHistory = () => {
   }
   if (user[0]?.orderhistory.length == 0) {
     return (
-      <section className="h-[70vh] bg-[length:600px_100%] bg-no-repeat bg-center bg-[url('https://img.freepik.com/free-vector/removing-goods-from-basket-refusing-purchase-changing-decision-item-deletion-emptying-trash-online-shopping-app-laptop-user-cartoon-character_335657-1172.jpg?w=740&t=st=1729104729~exp=1729105329~hmac=3f5c66177d02ce2c7ad9572109ff93c6da0095a5a2f87666f2ffe5ea74260bac')]">
+      <section className="h-[70vh] bg-[length:100%_100%] md:bg-[length:50%_100%] bg-no-repeat bg-center bg-[url('https://img.freepik.com/free-vector/removing-goods-from-basket-refusing-purchase-changing-decision-item-deletion-emptying-trash-online-shopping-app-laptop-user-cartoon-character_335657-1172.jpg?w=740&t=st=1729104729~exp=1729105329~hmac=3f5c66177d02ce2c7ad9572109ff93c6da0095a5a2f87666f2ffe5ea74260bac')]">
         <Container className="py-5">
           <div className="text-center my-40 align-items-center">
-            <h5 className='text-red-500 text-7xl mb-5 font-bold d-flex justify-content-center font-mono'>No Order History</h5>
+            <h5 className='text-dark text-5xl md:text-7xl mb-5 font-bold d-flex justify-content-center font-mono'>No Order History</h5>
             <Link to={'/home'}>
               <button className='rounded p-2 text-white font-bold text-xl bg-danger hover:opacity-[0.9]'>Continue Browsing</button>
             </Link>

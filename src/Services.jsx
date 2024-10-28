@@ -71,7 +71,7 @@ export default function ServiceList() {
             <Dropdown as={ButtonGroup} className="me-2 shadow-2xl">
               <Button variant="success" className={`font-semibold text-white`}>Sort By Price</Button>
               <Dropdown.Toggle split variant="success" id="dropdown-split-basic" />
-              <Dropdown.Menu className={`text-center`} >
+              <Dropdown.Menu className={`text-center`} data-bs-theme={`${LightMode ? "dark" : "light"}`}>
                 <Dropdown.Item className={`hover:font-bold`} onClick={sortLowToHigh}>Low to High</Dropdown.Item>
                 <Dropdown.Item className={`hover:font-bold`} onClick={sortHighToLow}>High to Low</Dropdown.Item>
                 <Dropdown.Item className={`hover:font-bold`} onClick={resetSort}>Default</Dropdown.Item>

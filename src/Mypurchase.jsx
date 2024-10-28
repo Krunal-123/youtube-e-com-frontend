@@ -50,7 +50,7 @@ function GridExample() {
         {isExploding && <ConfettiExplosion force={1} duration={4500} particleCount={250} width={2000} />}
       </div>
       <div className='flex justify-around md:hidden'>
-        {isExploding && <ConfettiExplosion force={1} duration={4500} particleCount={250} width={400} />}
+        {isExploding && <ConfettiExplosion force={1} duration={4500} particleCount={150} width={400} />}
       </div>
       <h2 className={`text-center text-5xl font-bold mb-5 font-serif text-${LightMode ? "white" : "dark"}`}>My Purchase Items:- ({user[0].myitems.length})</h2>
       <Row xl={4} className="g-5">

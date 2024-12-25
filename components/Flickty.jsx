@@ -21,10 +21,10 @@ export default function Carousel() {
         reloadOnUpdate={true}  // Reload carousel on update
         static={true}          // Static carousel (no dragging)
       >
-        <img src="https://img.freepik.com/free-psd/festival-lights-celebration-youtube-banner_23-2150854513.jpg?t=st=1729951052~exp=1729954652~hmac=5fcd5d6e7c8797eaa6b11dfa45f77b21a2ae978659b014a18b70b115ee89c883&w=1380" alt="Carousel Slide 1" className='h-[400px] border-0 rounded' />
-        <img src="https://img.freepik.com/free-psd/food-vlogger-youtube-banner_23-2148959988.jpg?t=st=1729950949~exp=1729954549~hmac=1d4402ffc3a92b6e65dbff7074b32edbae24b149e4ca575b80047cafdf3806b4&w=1380" alt="Carousel Slide 2" className='h-[400px] rounded border-0' />
-        <img src="https://img.freepik.com/free-psd/diwali-celebration-youtube-banner-template_23-2150808295.jpg?t=st=1729951122~exp=1729954722~hmac=58505bef5053bbed89466d3701ab54bce1b4ba346ce5404588fecb42fa6de82b&w=1380" alt="Carousel Slide 3" className='h-[400px] rounded border-0' />
-        <img src="https://img.freepik.com/free-psd/bubble-tea-youtube-channel-art-template-design_23-2150135968.jpg?t=st=1729951383~exp=1729954983~hmac=63041d89017e837d079816af9653b6545a206de305ede540919d9f4c5c4dfa11&w=1380" alt="Carousel Slide 3" className='h-[400px] rounded border-0' />
+        <img src="https://i.pinimg.com/originals/c3/5e/e5/c35ee563912b41eab22839be11d887ec.gif" alt="Carousel Slide 1" className='h-[400px] border-0 rounded' />
+        <img src="https://1.bp.blogspot.com/-C-tElKnDojw/W_4_zsIirsI/AAAAAAAAYMc/V0zcWYU3WIQGM0Pj6IdD2M4-QpZoZ7JswCLcBGAs/s1600/merry-christmas-animated-gif.gif" alt="Carousel Slide 2" className='h-[400px] rounded border-0' />
+        <img src="https://i0.wp.com/www.wordzz.com/wp-content/uploads/2018/12/Happy-New-Year-Colorful.gif?resize=587%2C263&ssl=1" alt="Carousel Slide 3" className='h-[400px] rounded border-0' />
+        <img src="https://3.bp.blogspot.com/-Th7qDL9q90I/WF-6Hh6f_4I/AAAAAAAAKPQ/J_5BfLHx5J4DR4CFf5x3V5oSfAVNsYkdQCLcB/s1600/happy-new-year-colorful-fireworks-over-city-animated-gif.gif" alt="Carousel Slide 3" className='h-[400px] rounded border-0' />
       </Flickity>
 
       {/* APP render */}
@@ -36,10 +36,14 @@ export default function Carousel() {
         reloadOnUpdate={true}  // Reload carousel on update
         static={true}          // Static carousel (no dragging)
       >
-        <img src="https://img.freepik.com/free-psd/festival-lights-celebration-youtube-banner_23-2150854513.jpg?t=st=1729951052~exp=1729954652~hmac=5fcd5d6e7c8797eaa6b11dfa45f77b21a2ae978659b014a18b70b115ee89c883&w=1380" alt="Carousel Slide 1" className='h-[240px] border-0' />
-        <img src="https://img.freepik.com/free-psd/food-vlogger-youtube-banner_23-2148959988.jpg?t=st=1729950949~exp=1729954549~hmac=1d4402ffc3a92b6e65dbff7074b32edbae24b149e4ca575b80047cafdf3806b4&w=1380" alt="Carousel Slide 2" className='h-[240px] border-0' />
-        <img src="https://img.freepik.com/free-psd/diwali-celebration-youtube-banner-template_23-2150808295.jpg?t=st=1729951122~exp=1729954722~hmac=58505bef5053bbed89466d3701ab54bce1b4ba346ce5404588fecb42fa6de82b&w=1380" alt="Carousel Slide 3" className='h-[240px] border-0' />
-        <img src="https://img.freepik.com/free-psd/bubble-tea-youtube-channel-art-template-design_23-2150135968.jpg?t=st=1729951383~exp=1729954983~hmac=63041d89017e837d079816af9653b6545a206de305ede540919d9f4c5c4dfa11&w=1380" alt="Carousel Slide 3" className='h-[240px] border-0' />
+      {/* img 1 */}
+        <img src="https://i.pinimg.com/originals/c3/5e/e5/c35ee563912b41eab22839be11d887ec.gif" alt="Carousel Slide 1" className='h-[240px] border-0' />
+        {/* img 2 */}
+        <img src="https://1.bp.blogspot.com/-C-tElKnDojw/W_4_zsIirsI/AAAAAAAAYMc/V0zcWYU3WIQGM0Pj6IdD2M4-QpZoZ7JswCLcBGAs/s1600/merry-christmas-animated-gif.gif" alt="Carousel Slide 2" className='h-[240px] border-0' />
+        {/* img 3 */}
+        <img src="https://i0.wp.com/www.wordzz.com/wp-content/uploads/2018/12/Happy-New-Year-Colorful.gif?resize=587%2C263&ssl=1" alt="Carousel Slide 3" className='h-[240px] border-0' />
+        {/* img 4*/}
+        <img src="https://3.bp.blogspot.com/-Th7qDL9q90I/WF-6Hh6f_4I/AAAAAAAAKPQ/J_5BfLHx5J4DR4CFf5x3V5oSfAVNsYkdQCLcB/s1600/happy-new-year-colorful-fireworks-over-city-animated-gif.gif" alt="Carousel Slide 3" className='h-[240px] border-0' />
       </Flickity>
     </>
   );

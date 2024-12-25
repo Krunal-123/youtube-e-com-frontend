@@ -305,6 +305,7 @@ export default function PrimarySearchAppBar() {
                 <button className="py-2 px-2 block mx-2 bg-clip-text text-md font-bold hover:text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500" onClick={() => Categoires("scripting")}>Video Scripting</button>
                 <button className="py-2 px-2 block mx-2 bg-clip-text text-md font-bold hover:text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500" onClick={() => Categoires("analytics")}>Analytics and Reporting</button>
                 <button className="py-2 px-2 block mx-2 bg-clip-text text-md font-bold hover:text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500" onClick={() => Categoires("promotions")}>Social Media Promotions</button>
+                <hr />
                 <button className="py-2 px-2 block mx-2 bg-clip-text text-md font-bold hover:text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500" onClick={() => Categoires("all")}>Explore All</button>
               </div>
 

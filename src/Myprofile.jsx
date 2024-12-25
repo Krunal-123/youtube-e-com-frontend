@@ -116,7 +116,7 @@ export default function PersonalProfile() {
           <MDBCol lg="10" className="mb-4">
             <MDBCard className={`mb-3 shadow-2xl rounded-2xl ${LightMode ? "bg-dark" : "bg-white"} ${LightMode ? "text-white" : "text-dark"}`}>
               <MDBRow className="g-0">
-                <MDBCol md="4" className="bg-[url(https://img.freepik.com/free-vector/black-wallpaper-with-silver-geometric-lines_1017-30669.jpg?w=996&t=st=1693673570~exp=1693674170~hmac=a816b7b1607c955137b5ce41b9e03a09728e8d16335a2e395beb5818dc43c41d)] bg-fill text-center text-white"
+                <MDBCol md="4" className="bg-[url(https://img.freepik.com/free-vector/black-wallpaper-with-silver-geometric-lines_1017-30669.jpg?w=996&t=st=1693673570~exp=1693674170~hmac=a816b7b1607c955137b5ce41b9e03a09728e8d16335a2e395beb5818dc43c41d)] bg-cover text-center text-white"
                   style={{ borderTopLeftRadius: '.5rem', borderBottomLeftRadius: '.5rem' }}>
                   <MDBCardImage
                     src={editDetails.profilePic || "default-avatar-url.jpg"}

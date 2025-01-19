@@ -9,7 +9,7 @@ import { useCart } from "./CartContext.jsx";
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Dropdown from 'react-bootstrap/Dropdown';
-import ShimmerBlocks from '../ShimmerEffect/ShimmerBlocks.jsx'
+import ShimmirContent from '../ShimmerEffect/ShimmerContent.jsx'
 
 export default function ServiceList() {
   const { services, user, LightMode } = useCart();
@@ -43,10 +43,7 @@ export default function ServiceList() {
 
   if (!cards || !user) {
     return (
-      <>
-      <Flickty/>
-      <ShimmerBlocks/>
-      </>
+      <ShimmirContent/>
     );
   }
 

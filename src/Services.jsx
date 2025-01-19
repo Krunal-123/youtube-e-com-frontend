@@ -9,6 +9,7 @@ import { useCart } from "./CartContext.jsx";
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Dropdown from 'react-bootstrap/Dropdown';
+import { ShimmerPostList } from "react-shimmer-effects";
 
 export default function ServiceList() {
   const { services, user, LightMode } = useCart();
@@ -44,9 +45,12 @@ export default function ServiceList() {
     return (
       <>
         <Flickty />
-        <div className="flex justify-center items-center h-[250px] text-xl">
+        {/* <div className="flex justify-center items-center h-[250px] text-xl">
           <Spinner animation="border" />
-        </div>
+        </div> */}
+        <Container className="mt-5">
+          <ShimmerPostList postStyle="STYLE_FOUR" col={3} row={3} gap={30} />;
+        </Container>
       </>
     );
   }

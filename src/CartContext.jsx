@@ -3,6 +3,8 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 import { Spinner } from 'react-bootstrap';
 import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
+import Header from '../components/Header'
+import Services from '../src/Services'
 
 // Create the Cart context
 const CartContext = createContext();
@@ -76,9 +78,13 @@ export const CartProvider = ({ children }) => {
   return (
     <CartContext.Provider value={{ cartItems, setCartItems, services, setServices, user, setUser, cookies, removeCookie, fav, setFav, open, setOpen, setAdd, isExploding, setIsExploding, LightMode, setLightMode, LengthCart, setLengthCart }}>
       {loading ?
-        <div className='container text-center h-[100vh] flex justify-center items-center'>
-          <Spinner />
-        </div>
+        // <div className='container text-center h-[100vh] flex justify-center items-center'>
+        //   <Spinner />
+        // </div>
+        <>
+        <Header/>
+        <Services/>
+        </>
         : children}
     </CartContext.Provider>
   );

@@ -3,8 +3,8 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 import { Spinner } from 'react-bootstrap';
 import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
-import ShimmerHeader from '../../ShimmerEffect/ShimmerHeader'
-import ShimmerContnet from '../../ShimmerEffect/ShimmerContent'
+import ShimmerHeader from '../ShimmerEffect/ShimmerHeader'
+import ShimmerContnet from '../ShimmerEffect/ShimmerContent'
 
 // Create the Cart context
 const CartContext = createContext();

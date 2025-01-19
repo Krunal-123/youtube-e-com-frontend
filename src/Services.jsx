@@ -5,7 +5,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Flickty from "../components/Flickty.jsx";
 import { Spinner } from "react-bootstrap";
-import { useCart } from "./context/CartContext.jsx";
+import { useCart } from "./CartContext.jsx";
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Dropdown from 'react-bootstrap/Dropdown';

@@ -3,8 +3,8 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 import { Spinner } from 'react-bootstrap';
 import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
-import Header from '../components/Header'
-import Services from '../ShimmerEffect/Services'
+import ShimmerHeader from '../ShimmerEffect/ShimmerHeader'
+import ShimmerBlocks  from '../ShimmerEffect/ShimmerBlocks'
 
 // Create the Cart context
 const CartContext = createContext();
@@ -79,8 +79,8 @@ export const CartProvider = ({ children }) => {
     <CartContext.Provider value={{ cartItems, setCartItems, services, setServices, user, setUser, cookies, removeCookie, fav, setFav, open, setOpen, setAdd, isExploding, setIsExploding, LightMode, setLightMode, LengthCart, setLengthCart }}>
       {loading ?
         <>
-          <Header />
-          <Services />
+          <ShimmerHeader />
+          <ShimmerBlocks />
         </>
         : children}
     </CartContext.Provider>

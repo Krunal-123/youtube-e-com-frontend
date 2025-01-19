@@ -9,7 +9,7 @@ import { useCart } from "./CartContext.jsx";
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Dropdown from 'react-bootstrap/Dropdown';
-import { ShimmerPostList } from "react-shimmer-effects";
+import Services from '../ShimmerEffect/Services.jsx'
 
 export default function ServiceList() {
   const { services, user, LightMode } = useCart();
@@ -43,15 +43,7 @@ export default function ServiceList() {
 
   if (!cards || !user) {
     return (
-      <>
-        <Flickty />
-        {/* <div className="flex justify-center items-center h-[250px] text-xl">
-          <Spinner animation="border" />
-        </div> */}
-        <Container className="mt-5">
-          <ShimmerPostList postStyle="STYLE_FOUR" col={3} row={3} gap={30} />;
-        </Container>
-      </>
+      <Services />
     );
   }
 

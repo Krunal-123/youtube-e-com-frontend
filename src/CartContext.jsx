@@ -4,7 +4,7 @@ import { Spinner } from 'react-bootstrap';
 import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header'
-import Services from '../src/Services'
+import Services from '../ShimmerEffect/Services'
 
 // Create the Cart context
 const CartContext = createContext();
@@ -64,12 +64,12 @@ export const CartProvider = ({ children }) => {
       setLoading(false);
     }
   };
-  async function mode(){
-    await axios.post("https://youtube-e-com-backend.onrender.com/light", { email: user?.[0].email , mode: LightMode })
+  async function mode() {
+    await axios.post("https://youtube-e-com-backend.onrender.com/light", { email: user?.[0].email, mode: LightMode })
   }
-  useEffect(()=>{
+  useEffect(() => {
     mode()
-  },[LightMode])
+  }, [LightMode])
 
   useEffect(() => {
     fetchData();
@@ -78,12 +78,9 @@ export const CartProvider = ({ children }) => {
   return (
     <CartContext.Provider value={{ cartItems, setCartItems, services, setServices, user, setUser, cookies, removeCookie, fav, setFav, open, setOpen, setAdd, isExploding, setIsExploding, LightMode, setLightMode, LengthCart, setLengthCart }}>
       {loading ?
-        // <div className='container text-center h-[100vh] flex justify-center items-center'>
-        //   <Spinner />
-        // </div>
         <>
-        <Header/>
-        <Services/>
+          <Header />
+          <Services />
         </>
         : children}
     </CartContext.Provider>

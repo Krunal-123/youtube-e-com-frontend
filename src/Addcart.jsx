@@ -7,7 +7,6 @@ import { MDBCard, MDBCardBody, MDBCardImage, MDBCol, MDBIcon, MDBRow, MDBTypogra
 import { Container } from '@mui/material';
 import { useCart } from './context/CartContext';
 import { Link, useNavigate } from 'react-router-dom';
-import { AiOutlineShoppingCart } from "react-icons/ai";
 import 'react-toastify/dist/ReactToastify.css';
 import { errorToast } from '../components/ErrorToast';
 import { Toast } from '../components/SuccessToast';

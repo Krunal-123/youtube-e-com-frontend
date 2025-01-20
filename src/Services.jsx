@@ -9,7 +9,7 @@ import { useCart } from "./context/CartContext.jsx";
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Dropdown from 'react-bootstrap/Dropdown';
-import ShimmirContent from '../ShimmerEffect/ShimmerContent.jsx'
+import ShimmirContent from '../ShimmerEffect/ShimmerContent'
 
 export default function ServiceList() {
   const { services, user, LightMode } = useCart();

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
 import "../src/App.css"
-import { CartProvider } from './CartContext.jsx'
+import { CartProvider } from './context/CartContext.jsx'
 import ExtraCompo from './ExtraCompo.jsx';
 
 

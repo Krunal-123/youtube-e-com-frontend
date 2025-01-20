@@ -6,7 +6,7 @@ import Badge from 'react-bootstrap/Badge';
 import { Button, Spinner } from 'react-bootstrap';
 import { FaRegHeart } from 'react-icons/fa'; // Importing the heart icon
 import { toast } from 'react-toastify';
-import { useCart } from '../src/CartContext';
+import { useCart } from '../src/context/CartContext';
 
 export default function ({ id, img, title, description, btn, email, status, color }) {
   const { user, setFav, LightMode } = useCart();

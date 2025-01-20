@@ -13,7 +13,7 @@ import {
 } from 'mdb-react-ui-kit';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
-import { useCart } from './CartContext';
+import { useCart } from './context/CartContext';
 import { Button, Spinner } from 'react-bootstrap';
 import axios from 'axios';
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { TextField, Button, Box, Typography, Rating, Card, CardContent } from '@mui/material';
-import { useCart } from './CartContext';
+import { useCart } from './context/CartContext';
 import axios from 'axios';
 import { Toast } from '../components/SuccessToast';
 

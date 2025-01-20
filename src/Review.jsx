@@ -5,7 +5,7 @@ import { Card, CardContent, Typography } from '@mui/material';
 import { Container } from '@mui/system';
 import Rating from '@mui/material/Rating';
 import { MDBCardImage } from 'mdb-react-ui-kit';
-import { useCart } from './CartContext';
+import { useCart } from './context/CartContext';
 
 export default function ReviewPage({ data, user }) {
 

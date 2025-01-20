@@ -1,5 +1,5 @@
 import { Card, Col, Row, Button, Badge } from 'react-bootstrap';
-import { useCart } from './CartContext'
+import { useCart } from './context/CartContext'
 import { MDBContainer } from 'mdb-react-ui-kit';
 import { Container } from '@mui/material';
 import { Link } from 'react-router-dom';

@@ -5,7 +5,7 @@ import { styled } from '@mui/material/styles';
 import { FaShoppingCart } from 'react-icons/fa';
 import { useParams } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
-import { useCart } from './CartContext'; // Adjust the import path as necessary
+import { useCart } from './context/CartContext'; // Adjust the import path as necessary
 import 'react-toastify/dist/ReactToastify.css';
 import ReviewPage from './Review';
 import WriteReviewPage from './CreateReview';

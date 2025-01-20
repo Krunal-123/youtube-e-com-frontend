@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { styled } from '@mui/material/styles';
 import { Box, Card, CardContent, CardMedia, Typography, Button, Modal, Divider, Container, CircularProgress, Grid } from '@mui/material';
-import { useCart } from './CartContext';
+import { useCart } from './context/CartContext';
 import { Link } from 'react-router-dom';
 
 const OrderCard = styled(Card)(({ theme }) => ({

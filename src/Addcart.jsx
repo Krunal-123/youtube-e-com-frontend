@@ -5,7 +5,7 @@ import axios from "axios";
 import { Button } from "react-bootstrap";
 import { MDBCard, MDBCardBody, MDBCardImage, MDBCol, MDBIcon, MDBRow, MDBTypography } from "mdb-react-ui-kit";
 import { Container } from '@mui/material';
-import { useCart } from './CartContext';
+import { useCart } from './context/CartContext';
 import { Link, useNavigate } from 'react-router-dom';
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import 'react-toastify/dist/ReactToastify.css';

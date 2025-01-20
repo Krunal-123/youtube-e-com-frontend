@@ -1,7 +1,7 @@
 import React from 'react';
 import { Accordion, Col, Row } from 'react-bootstrap';
 import { FaUsers, FaLightbulb, FaCogs, FaSmile, FaHistory } from 'react-icons/fa';
-import { useCart } from './CartContext';
+import { useCart } from './context/CartContext';
 
 function AboutUs() {
   const { LightMode } = useCart()

@@ -1,4 +1,4 @@
-import { useCart } from "../src/CartContext"
+import { useCart } from "../src/context/CartContext"
 
 export default function () {
     const { LightMode } = useCart()

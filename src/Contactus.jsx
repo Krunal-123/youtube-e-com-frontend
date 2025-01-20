@@ -3,7 +3,7 @@ import { FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
 import { Toast } from '../components/SuccessToast';
 import axios from 'axios';
 import { errorToast } from '../components/ErrorToast';
-import { useCart } from './CartContext';
+import { useCart } from './context/CartContext';
 
 function ContactUs() {
   const { LightMode, user } = useCart()

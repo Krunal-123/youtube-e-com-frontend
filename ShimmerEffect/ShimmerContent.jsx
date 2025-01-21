@@ -9,8 +9,8 @@ const YourComponent = () => {
   return (
     <>
       {/* Carousel Skeleton */}
-      <div className="mt-4 rounded max-md:hidden"><Skeleton height="400px" duration={0.9} /></div>
-      <div className="mt-4 rounded md:hidden"><Skeleton height="240px" duration={0.9} /></div>
+      <div className="mt-4 rounded max-md:hidden"><Skeleton height="400px" /></div>
+      <div className="mt-4 rounded md:hidden"><Skeleton height="240px" /></div>
       {/* Cards Skeleton */}
       <Container className="my-4">
         <Row xl={3} className="g-4">

@@ -4,21 +4,25 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 
 import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { lazy } from 'react';
+
 import Login from '../components/Login.jsx';
 import Signup from './Signup.jsx';
 import HomePage from './HomePage.jsx';
-import About from './Aboutus.jsx';
-import Contact from './Contactus.jsx';
-import ErrorPage from "../components/ErrorPage.jsx"
-import Services from './Services.jsx';
-import DetailCard from './DeatilCard.jsx'
-import Addcart from './Addcart.jsx'
-import Mypurchase from './Mypurchase.jsx'
-import Myprofile from './Myprofile.jsx'
-import ForgotPassword from './ForgotPassword.jsx';
-import ResetPassword from './ResetPassword.jsx';
-import Myfavourites from './Myfavourites.jsx'
-import OrderHistory from './OrderHistory.jsx';
+
+// lazy loading components
+const About = lazy(() => import('./Aboutus.jsx'))
+const Contact = lazy(() => import('./Contactus.jsx'))
+const Services = lazy(() => import('./Services.jsx'))
+const DetailCard = lazy(() => import('./DeatilCard.jsx'))
+const Addcart = lazy(() => import('./Addcart.jsx'))
+const Mypurchase = lazy(() => import('./Mypurchase.jsx'))
+const Myprofile = lazy(() => import('./Myprofile.jsx'))
+const ForgotPassword = lazy(() => import('./ForgotPassword.jsx'))
+const ResetPassword = lazy(() => import('./ResetPassword.jsx'))
+const Myfavourites = lazy(() => import('./Myfavourites.jsx'))
+const OrderHistory = lazy(() => import('./OrderHistory.jsx'))
+const ErrorPage = lazy(() => import('../components/ErrorPage.jsx'))
 
 function App() {
   return (

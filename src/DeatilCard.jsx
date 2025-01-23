@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { Button, Container, CircularProgress, Grid, Box, Modal, Typography, Divider } from '@mui/material';
+import { Spinner } from 'react-bootstrap';
+import { Button, Container, Grid, Box, Modal, Typography, Divider } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import { FaShoppingCart } from 'react-icons/fa';
@@ -62,7 +63,7 @@ function BasicExample() {
     if (!Data) {
         return (
             <Box display="flex" justifyContent="center" alignItems="center" height="100vh">
-                <CircularProgress />
+                <Spinner animation="border" variant="primary" />
             </Box>
         );
     }

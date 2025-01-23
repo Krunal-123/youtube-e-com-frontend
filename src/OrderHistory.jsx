@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { styled } from '@mui/material/styles';
-import { Box, Card, CardContent, CardMedia, Typography, Button, Modal, Divider, Container, CircularProgress, Grid } from '@mui/material';
+import { Box, Card, CardContent, CardMedia, Typography, Button, Modal, Divider, Container, Grid } from '@mui/material';
+import { Spinner } from 'react-bootstrap';
 import { useCart } from './context/CartContext';
 import { Link } from 'react-router-dom';
 
@@ -35,7 +36,7 @@ const OrderHistory = () => {
   if (!user) {
     return (
       <Box display="flex" justifyContent="center" alignItems="center" minHeight="50vh">
-        <CircularProgress />
+        <Spinner animation="border" variant="primary" />
       </Box>
     );
   }

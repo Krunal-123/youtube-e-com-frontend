@@ -1,16 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {
-  MDBCol,
-  MDBContainer,
-  MDBRow,
-  MDBCard,
-  MDBCardText,
-  MDBCardBody,
-  MDBCardImage,
-  MDBTypography,
-  MDBIcon,
-  MDBInput,
-} from 'mdb-react-ui-kit';
+import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardBody, MDBCardImage, MDBCardText, MDBTypography, MDBIcon, MDBInput } from 'mdb-react-ui-kit';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import { useCart } from './context/CartContext';
@@ -102,7 +91,7 @@ export default function PersonalProfile() {
       <section className="bg-[#f4f5f7]">
         <MDBContainer className="py-10 h-100">
           <MDBRow className="justify-content-center align-items-center h-100">
-            <Spinner animation="border" />
+            <Spinner animation="border" variant="primary" />
           </MDBRow>
         </MDBContainer>
       </section>

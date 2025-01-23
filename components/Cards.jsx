@@ -73,7 +73,7 @@ export default function ({ id, img, title, description, btn, email, status, colo
 
   // Display a loading spinner if the user data is not available
   if (!user) {
-    return <Spinner animation="border" />;
+    return <Spinner animation="border" variant="primary" />;
   }
 
   return (

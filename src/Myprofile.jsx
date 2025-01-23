@@ -52,9 +52,9 @@ export default function PersonalProfile() {
   // UseEffect to initialize editDetails with user data
   useEffect(() => {
     if (user && user.length > 0) {
-      const { profilePic, firstName, lastName, email, gender, number, _id } = user[0];
+      const { profilePic, firstName, lastName, email, gender, number, _id, createdAt } = user[0];
       setSelectedAvatar(profilePic);
-      setEditDetails({ profilePic, firstName, lastName, email, gender, number, _id });
+      setEditDetails({ profilePic, firstName, lastName, email, gender, number, _id, createdAt });
     }
   }, [user]);
   useEffect(() => {
@@ -141,7 +141,7 @@ export default function PersonalProfile() {
                 </MDBCol>
                 <MDBCol md="8" className='py-5'>
                   <MDBCardBody className="px-5 pt-5 text-lg font-semibold">
-                    <MDBTypography tag="h6">Account ID: {editDetails._id}</MDBTypography>
+                    <MDBTypography tag="h6" className='flex justify-between'><span>Account ID: {editDetails._id}</span> {editDetails.createdAt && <span>createdAt: {new Date(editDetails.createdAt).toLocaleDateString()}</span>}</MDBTypography>
                     <hr className="mt-2 mb-4" />
                     <MDBRow className="pt-1">
                       <MDBCol size="6" className="mb-3">

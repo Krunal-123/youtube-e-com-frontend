@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Button, Container, CircularProgress, Grid, Box, Modal, Typography, Divider } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import { FaShoppingCart } from 'react-icons/fa';
 import { useParams } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
@@ -69,6 +70,7 @@ function BasicExample() {
     return (
         <>
             <Container sx={{ my: 8 }} className={`text-${LightMode ? "white" : "dark"}`}>
+                <button onClick={() => { history.back() }} className='max-md:hidden fixed left-10 bg-transparent text-blue-500 font-bold py-2 px-3 border-2 border-blue-500 rounded hover:cursor-pointer hover:shadow-[0_0px_15px_1px_rgba(0,100,255,0.9)]'><KeyboardBackspaceIcon /><span className='pl-2'>Go Back</span></button>
                 <Grid container spacing={4}>
                     <Grid item xs={12} md={6}>
                         <Box component="img" src={Data.img} alt={Data.title} className='shadow-xl h-[450px] md:h-[550px] w-100 rounded' />

@@ -108,10 +108,11 @@ export default function Basic() {
   }
 
   return (
-    <Container className="my-5">
+    <Container className="mt-4 mb-5">
+      <button onClick={() => { history.back() }} className='max-md:hidden fixed left-10 bg-transparent text-blue-500 font-bold py-2 px-4 border-2 border-blue-500 rounded hover:cursor-pointer hover:shadow-[0_0px_20px_2px_rgba(0,100,255,0.9)]'>Go Back</button>
       <MDBRow className="justify-content-center align-items-center">
         <MDBCol>
-          <MDBCard className={`shadow-2xl transition ease-in-out delay-300 ${LightMode ? "bg-gray-600" : "bg-white"} ${LightMode ? "text-white" : "text-dark"} ${LightMode && "hover:shadow-[0_0px_40px_5px_rgba(220,255,0,0.9)]"}`}>
+          <MDBCard className={`shadow-2xl transition ease-in-out delay-300 ${LightMode ? "bg-gray-600" : "bg-white"} ${LightMode ? "text-white" : "text-dark"} ${LightMode && "hover:shadow-[0_0px_22px_2px_rgba(220,255,0,0.9)]"}`}>
             <MDBCardBody className="px-4">
               <MDBRow>
                 <MDBCol lg="7">

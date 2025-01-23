@@ -1,6 +1,7 @@
 import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx'
 import MobileOnly from '../components/MobileOnly.jsx'
+import { Spinner } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
 import { useCart } from './context/CartContext.jsx';
 import { Suspense } from 'react';
@@ -11,7 +12,7 @@ export default function () {
         <>
             <div className={`${LightMode ? "bg-slate-900" : "bg-white"}`}>
                 <Header />
-                <Suspense fallback={<div className='h-[100vh] flex justify-center items-center'></div>}>
+                <Suspense fallback={<div className='h-[100vh] flex justify-center items-center'><Spinner/></div>}>
                     <Outlet />
                 </Suspense>
                 <Footer />

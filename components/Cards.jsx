@@ -77,7 +77,7 @@ export default function ({ id, img, title, description, btn, email, status, colo
   }
 
   return (
-    <Card className={`border-0 w-[340px] h-[500px] m-auto transition duration-500 ease-in-out hover:scale-105 shadow-2xl ${LightMode ? "hover:shadow-[0_0px_40px_4px_rgba(0,255,255,1)]" : "hover:shadow-[0_0px_40px_1px_rgba(0,0,0,1)]"} ${LightMode ? "bg-dark" : "bg-white"} ${LightMode ? "text-white" : "text-gray-700"} relative rounded-xl`}>
+    <Card className={`border-0 w-[340px] h-[500px] m-auto transition duration-500 ease-in-out hover:scale-105 shadow-2xl ${LightMode ? "hover:shadow-[0_0px_22px_3px_rgba(0,255,255,1)]" : "hover:shadow-[0_0px_40px_1px_rgba(0,0,0,1)]"} ${LightMode ? "bg-dark" : "bg-white"} ${LightMode ? "text-white" : "text-gray-700"} relative rounded-xl`}>
 
       {/* Favorite Icon */}
       <FaRegHeart

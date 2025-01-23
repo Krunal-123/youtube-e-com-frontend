@@ -44,14 +44,14 @@ export default function SignInSide() {
     event.preventDefault();
     const { email, password, remember } = event.target;
     let data = {
-      email: email.value,
-      password: password.value,
+      email: (email.value).trim(),
+      password: (password.value).trim(),
       remember: remember.value
     };
 
     try {
       const res = await axios.post('https://youtube-e-com-backend.onrender.com/login', data);
-      if (res.data === 'Invalid credentials') {
+      if (res.data == 'Invalid credentials') {
         toast.error('INVALID EMAIL OR PASSWORD', {
           position: 'top-center',
           autoClose: 2000,
@@ -87,7 +87,16 @@ export default function SignInSide() {
       }
     } catch (error) {
       console.error('An error occurred during login:', error);
-      toast.error('An error occurred. Please try again later.');
+      toast.error('An error occurred. Please try again later.', {
+        position: 'top-center',
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+      });
     }
   };
 

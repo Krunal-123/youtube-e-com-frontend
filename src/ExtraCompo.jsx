@@ -12,7 +12,7 @@ export default function () {
         <>
             <div className={`${LightMode ? "bg-slate-900" : "bg-white"}`}>
                 <Header />
-                <Suspense fallback={<div className={h-[100vh]}></div>}>
+                <Suspense fallback={<div className={"h-[100vh]"}></div>}>
                     <Outlet />
                 </Suspense>
                 <Footer />

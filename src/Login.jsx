@@ -16,6 +16,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useCookies } from 'react-cookie';
 import LoadingButtonsTransition from '../components/LoadingBtn';
+import { errorToast } from '../components/ErrorToast';
 
 function Copyright(props) {
   return (
@@ -55,16 +56,7 @@ export default function SignInSide() {
       const res = await axios.post('https://youtube-e-com-backend.onrender.com/login', data);
       if (res.data == 'Invalid credentials') {
         setLoading(p => !p)
-        toast.error('INVALID EMAIL OR PASSWORD', {
-          position: 'top-center',
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: false,
-          draggable: true,
-          progress: undefined,
-          theme: 'light',
-        });
+        errorToast('INVALID EMAIL OR PASSWORD', 2000);
       }
       else {
         toast('WELCOME 🙏', {
@@ -90,17 +82,9 @@ export default function SignInSide() {
       }
     } catch (error) {
       setLoading(p => !p)
-      console.error('An error occurred during login:', error);
-      toast.error('An error occurred. Please try again later.', {
-        position: 'top-center',
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: true,
-        progress: undefined,
-        theme: 'light',
-      });
+      console.error('An error occurred during login:');
+      errorToast('An error occurred during login:', 2000);
+
     }
   };
 

@@ -63,7 +63,7 @@ export default function SignUp() {
             errorToast('Email Already Exist', 2000)
           } else {
             navigate('/login')
-            Toast('Account Created Successfully🎉', 2000)
+            Toast('🥳New Account Created🎉', 2000)
           }
         })
     }

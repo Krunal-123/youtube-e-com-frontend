@@ -1,5 +1,5 @@
 import React from 'react';
-import { ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import { ListItem } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
 import ContactMailIcon from '@mui/icons-material/ContactMail';

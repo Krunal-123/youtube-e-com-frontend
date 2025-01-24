@@ -51,7 +51,7 @@ export default function SignUp() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const { firstName, lastName, email, number, password, confirm, gender } = event.target
-    if (number.value.length !== 10) {
+    if (number.value.length < 10) {
       errorToast('Invalid phone number! Please Enter the 10-digit!', 2000);
       return;
     }

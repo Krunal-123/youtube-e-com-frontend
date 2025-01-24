@@ -52,7 +52,11 @@ export default function SignUp() {
     event.preventDefault();
     const { firstName, lastName, email, number, password, confirm, gender } = event.target
     if (number.value.length !== 10) {
-      errorToast('Invalid phone number! Please Enter the 10-digit!', 4000);
+      errorToast('Invalid phone number! Please Enter the 10-digit!', 2000);
+      return;
+    }
+    if (number.value.length > 10) {
+      errorToast('Please Enter the 10-digit Number Only!', 2000);
       return;
     }
     if (password.value == confirm.value) {

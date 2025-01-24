@@ -19,6 +19,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { errorToast } from '../components/ErrorToast';
 import { Toast } from '../components/SuccessToast';
+import LoadingButtonsTransition from '../components/LoadingBtn';
 
 function Copyright(props) {
   return (
@@ -43,19 +44,24 @@ const darkTheme = createTheme({
 export default function SignUp() {
 
   const [age, setAge] = React.useState('');
+  const [loading, setLoading] = React.useState(false);
 
   const handleChange = (event) => {
     setAge(event.target.value);
   };
   let navigate = useNavigate()
+
   const handleSubmit = (event) => {
     event.preventDefault();
+    setLoading(p => !p)
     const { firstName, lastName, email, number, password, confirm, gender } = event.target
     if (number.value.length < 10) {
+      setLoading(p => !p)
       errorToast('Invalid phone number! Please Enter the 10-digit!', 3000);
       return;
     }
     if (number.value.length > 10) {
+      setLoading(p => !p)
       errorToast('Please Enter the 10-digit Number Only!', 3000);
       return;
     }
@@ -64,6 +70,7 @@ export default function SignUp() {
       axios.post('https://youtube-e-com-backend.onrender.com/signup', data)
         .then((res) => {
           if (res.data == 'user_already_exist') {
+            setLoading(p => !p)
             errorToast('Email Already Exist', 2000)
           } else {
             navigate('/login')
@@ -72,7 +79,8 @@ export default function SignUp() {
         })
     }
     else {
-      errorToast('Check Password Again', 1200)
+      setLoading(p => !p)
+      errorToast('Check Password Again', 2000)
     }
   };
 
@@ -189,14 +197,7 @@ export default function SignUp() {
                   />
                 </Grid>
               </Grid>
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                sx={{ mt: 3, mb: 2 }}
-              >
-                Sign Up
-              </Button>
+              <LoadingButtonsTransition loading={loading} text={'Sign Up'} loadingText={'Uploading...'} />
             </form>
             <Grid container className='flex justify-center'>
               <Grid item>

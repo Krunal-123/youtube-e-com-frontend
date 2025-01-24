@@ -157,7 +157,7 @@ export default function SignInSide() {
                 control={<Checkbox checked={check} name="remember" value={remember_val} onChange={() => setCheck(p => !p)} color="primary" />}
                 label="Remember me"
               />
-              <LoadingButtonsTransition loading={loading} />
+              <LoadingButtonsTransition loading={loading} text={'Sign In'} loadingText={'Loading...'}/>
               <Grid container className='mt-5'>
                 <Grid item lg>
                   <Link href="forgot-password" variant="body1" sx={{ color: '#3f51b5' }}>

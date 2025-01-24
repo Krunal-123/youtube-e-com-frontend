@@ -156,7 +156,7 @@ const OrderHistory = () => {
                     <h2 className="my-2">(Incl All Taxes)</h2>
                     <Typography variant="h6" className='flex justify-start items-center'>
                       Paid Amount: ₹{selectedOrder.amount}
-                      <img src='https://image.pngaaa.com/577/40577-middle.png' alt='paid logo' className='h-[90px] w-[145px] -rotate-12' />
+                      <img src='https://res.cloudinary.com/dlhikwznm/image/upload/v1737722013/pngwing.com_lvwxnw.png' alt='paid logo' className='ml-4 h-[90px] w-[145px]' />
                     </Typography>
                   </Box>
                 </Box>

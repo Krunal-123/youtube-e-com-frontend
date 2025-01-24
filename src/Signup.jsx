@@ -66,17 +66,18 @@ export default function SignUp() {
       return;
     }
     if (password.value == confirm.value) {
-      let data = { firstName: firstName.value, lastName: lastName.value, number: number.value, email: email.value, gender: gender.value, password: password.value, confirm: confirm.value }
-      axios.post('https://youtube-e-com-backend.onrender.com/signup', data)
-        .then((res) => {
-          if (res.data == 'user_already_exist') {
-            setLoading(p => !p)
-            errorToast('Email Already Exist', 2000)
-          } else {
-            navigate('/login')
-            Toast('🥳New Account Created🎉', 2000)
-          }
-        })
+      let data = { firstName: (firstName.value).trim(), lastName: (lastName.value).trim(), number: (number.value).trim(), email: (email.value).trim(), gender: (gender.value).trim(), password: (password.value).trim(), confirm: (confirm.value).trim() }
+      axios.post('https://youtube-e-com-backend.onrender.com/signup', data).then((res) => {
+        if (res.data == 'user_already_exist') {
+          setLoading(p => !p)
+          errorToast('Email Already Exist', 2000)
+          return;
+        } else {
+          navigate('/login')
+          Toast('🥳New Account Created🎉', 2000)
+        }
+      })
+      return;
     }
     else {
       setLoading(p => !p)

@@ -6,7 +6,7 @@ import { ToastContainer } from 'react-toastify';
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { lazy } from 'react';
 
-import Login from '../components/Login.jsx';
+import Login from './Login.jsx';
 import Signup from './Signup.jsx';
 import HomePage from './HomePage.jsx';
 

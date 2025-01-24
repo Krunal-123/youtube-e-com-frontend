@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -16,6 +15,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useCookies } from 'react-cookie';
+import LoadingButtonsTransition from '../components/LoadingBtn';
 
 function Copyright(props) {
   return (
@@ -36,12 +36,14 @@ const defaultTheme = createTheme();
 export default function SignInSide() {
   const [cookie, setCookie] = useCookies()
   const [check, setCheck] = React.useState(false)
-  let remember_val = check ? "remember" : "not remember"
-  let navigate = useNavigate();
+  const [loading, setLoading] = React.useState(false);
+  const remember_val = check ? "remember" : "not remember"
+  const navigate = useNavigate();
 
   axios.defaults.withCredentials = true;
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setLoading(p => !p)
     const { email, password, remember } = event.target;
     let data = {
       email: (email.value).trim(),
@@ -52,6 +54,7 @@ export default function SignInSide() {
     try {
       const res = await axios.post('https://youtube-e-com-backend.onrender.com/login', data);
       if (res.data == 'Invalid credentials') {
+        setLoading(p => !p)
         toast.error('INVALID EMAIL OR PASSWORD', {
           position: 'top-center',
           autoClose: 2000,
@@ -83,9 +86,10 @@ export default function SignInSide() {
         setTimeout(() => {
           navigate('/home');
           window.location.reload();
-        }, 1700);
+        }, 1500);
       }
     } catch (error) {
+      setLoading(p => !p)
       console.error('An error occurred during login:', error);
       toast.error('An error occurred. Please try again later.', {
         position: 'top-center',
@@ -169,15 +173,7 @@ export default function SignInSide() {
                 control={<Checkbox checked={check} name="remember" value={remember_val} onChange={() => setCheck(p => !p)} color="primary" />}
                 label="Remember me"
               />
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                color="primary"
-                sx={{ mt: 3, mb: 2, py: 1.5, borderRadius: '8px', textTransform: 'none', backgroundColor: '#3f51b5', ':hover': { backgroundColor: '#303f9f' } }}
-              >
-                Sign In
-              </Button>
+              <LoadingButtonsTransition loading={loading} />
               <Grid container className='mt-5'>
                 <Grid item lg>
                   <Link href="forgot-password" variant="body1" sx={{ color: '#3f51b5' }}>

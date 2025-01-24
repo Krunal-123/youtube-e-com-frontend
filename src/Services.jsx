@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Card from "../components/Cards.jsx";
 import { Container } from '@mui/material';
 import Col from "react-bootstrap/Col";

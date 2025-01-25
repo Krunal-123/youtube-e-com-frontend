@@ -25,7 +25,7 @@ export const CartProvider = ({ children }) => {
   // isExploding
   const [isExploding, setIsExploding] = useState(false);
   // light mode
-  const [LightMode, setLightMode] = useState(false)
+  const [LightMode, setLightMode] = useState(null)
   // purchase new items show with the new badge for the session
   const [LengthCart, setLengthCart] = useState([])
 

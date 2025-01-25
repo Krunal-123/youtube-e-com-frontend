@@ -22,6 +22,7 @@ export default function PrimarySearchAppBar() {
     const { data: servicesData } = await axios.post("https://youtube-e-com-backend.onrender.com/services", { categorise });
     setServices(servicesData);
     navigate("/home")
+    window.scrollTo(400, 400)
   }
   const search = async (e) => {
     if (e.key === "Enter") {
@@ -29,7 +30,6 @@ export default function PrimarySearchAppBar() {
       const { data: servicesData } = await axios.post("https://youtube-e-com-backend.onrender.com/search", { value });
       setServices(servicesData)
       navigate("/home")
-      window.scrollTo(400, 400)
     }
   }
 

@@ -72,15 +72,18 @@ export default function SignUp() {
     }
 
     if (!emailRegex.test(email.value)) {
+      setLoading(p => !p)
       errorToast('Invalid email format! Please enter a valid email address.', 4000);
       return;
     }
     if (!passwordRegex.test(password.value)) {
+      setLoading(p => !p)
       errorToast('Password must be at least 8 characters long, include a number(0-9), a special character($,#,@), and a letter([A-Z,a-z]).', 4000);
       return;
     }
 
     if (password.value !== confirm.value) {
+      setLoading(p => !p)
       errorToast('Passwords do not match. Please try again.', 4000);
       return;
     }

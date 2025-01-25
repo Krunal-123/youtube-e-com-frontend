@@ -72,11 +72,11 @@ export default function PrimarySearchAppBar() {
               </Link>
 
               {/* Categories */}
-              <Link
+              <div
                 onMouseEnter={() => setCustom(true)}
                 onMouseLeave={() => setCustom(false)}>
                 <button className="my-2  block mx-2 bg-clip-text text-lg font-bold hover:text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">Categoires</button>
-              </Link>
+              </div>
 
 
               {/* Categories Menu */}

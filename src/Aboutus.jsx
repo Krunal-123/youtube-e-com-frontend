@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Accordion, Col, Row } from 'react-bootstrap';
 import { FaUsers, FaLightbulb, FaCogs, FaSmile, FaHistory } from 'react-icons/fa';
 import { useCart } from './context/CartContext';

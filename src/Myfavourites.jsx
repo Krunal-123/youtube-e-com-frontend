@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { FaHeartCrack } from 'react-icons/fa6';
 import axios from 'axios';
 import { errorToast } from '../components/ErrorToast';
+import { useEffect } from 'react';
 
 function GridExample() {
   const { user, setFav, LightMode } = useCart()

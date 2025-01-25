@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Card, Col, Row, Button, Modal, Badge } from 'react-bootstrap';
 import { useCart } from './context/CartContext';
 import { MDBContainer } from 'mdb-react-ui-kit';

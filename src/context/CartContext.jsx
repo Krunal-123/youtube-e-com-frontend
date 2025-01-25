@@ -64,6 +64,7 @@ export const CartProvider = ({ children }) => {
     }
   };
   async function mode() {
+    if (LightMode==null) return;
     await axios.post("https://youtube-e-com-backend.onrender.com/light", { email: user?.[0].email, mode: LightMode })
   }
   useEffect(() => {

@@ -3,10 +3,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 
-import { Routes, Route, createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { lazy } from 'react';
 
-import Login from '../components/Login.jsx';
+import Login from './Login.jsx';
 import Signup from './Signup.jsx';
 import HomePage from './HomePage.jsx';
 

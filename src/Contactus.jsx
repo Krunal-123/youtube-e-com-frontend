@@ -9,6 +9,11 @@ function ContactUs() {
   const { LightMode, user } = useCart()
   const [bool, setBool] = useState(false)
 
+  useEffect(() => {
+    // Scroll to the top when the route changes
+    window.scrollTo(0, 0);
+  }, []);
+
   // function
   async function handleSubmit(e) {
     e.preventDefault()

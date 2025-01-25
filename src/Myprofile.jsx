@@ -38,6 +38,11 @@ export default function PersonalProfile() {
     ]
   };
 
+  useEffect(() => {
+    // Scroll to the top when the route changes
+    window.scrollTo(0, 0);
+  }, []);
+
   // UseEffect to initialize editDetails with user data
   useEffect(() => {
     if (user && user.length > 0) {

@@ -5,6 +5,10 @@ import { useCart } from './context/CartContext';
 
 function AboutUs() {
   const { LightMode } = useCart()
+  useEffect(() => {
+    // Scroll to the top when the route changes
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       {/* Header Section */}

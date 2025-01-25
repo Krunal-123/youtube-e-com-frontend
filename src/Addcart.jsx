@@ -23,6 +23,11 @@ export default function Basic() {
   const total = Math.floor((subtotal / 2) + GST);
 
   useEffect(() => {
+    // Scroll to the top when the route changes
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     if (user && user[0]) {
       setUserData(user[0].addcart || []);
     }

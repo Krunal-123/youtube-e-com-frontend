@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { styled } from '@mui/material/styles';
 import { Box, Card, CardContent, CardMedia, Typography, Button, Modal, Divider, Container, Grid } from '@mui/material';
 import { Spinner } from 'react-bootstrap';
@@ -31,6 +31,11 @@ const OrderHistory = () => {
   const { user, LightMode } = useCart();
   const [open, setOpen] = useState(false);
   const [selectedOrder, setSelectedOrder] = useState(null);
+
+  useEffect(() => {
+    // Scroll to the top when the route changes
+    window.scrollTo(0, 0);
+  }, []);
 
   // Spinner and empty order handling
   if (!user) {

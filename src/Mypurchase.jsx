@@ -10,7 +10,11 @@ function GridExample() {
   const { user, services, isExploding, LightMode, LengthCart } = useCart();
   const [showModal, setShowModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
-  let decre = length
+
+  useEffect(() => {
+    // Scroll to the top when the route changes
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleShowModal = (item) => {
     setSelectedItem(item);

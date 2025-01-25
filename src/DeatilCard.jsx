@@ -23,6 +23,11 @@ function BasicExample() {
     const [Data, setData] = useState(null); // State to hold filtered service data
 
     useEffect(() => {
+        // Scroll to the top when the route changes
+        window.scrollTo(0, 0);
+    }, []);
+
+    useEffect(() => {
         if (services && user) {
             const filteredData = services.find((p) => p._id === id);
             setData(filteredData); // Set the filtered data to local state

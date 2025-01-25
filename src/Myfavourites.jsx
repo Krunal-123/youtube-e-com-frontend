@@ -10,6 +10,11 @@ import { errorToast } from '../components/ErrorToast';
 function GridExample() {
   const { user, setFav, LightMode } = useCart()
 
+  useEffect(() => {
+    // Scroll to the top when the route changes
+    window.scrollTo(0, 0);
+  }, []);
+
   const handleFavoriteClick = async (email, id) => {
     await axios.post("https://youtube-e-com-backend.onrender.com/addfavourite/delete", { email, id });
     errorToast('Remove', 1000)

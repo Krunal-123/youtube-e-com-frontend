@@ -55,6 +55,11 @@ export default function SignUp() {
     event.preventDefault();
     setLoading(p => !p)
     const { firstName, lastName, email, number, password, confirm, gender } = event.target
+
+    const emailRegex = /^[a-zA-Z0-9]+@gmail\.com$/;
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+    // Validations
     if (number.value.length < 10) {
       setLoading(p => !p)
       errorToast('Invalid phone number! Please Enter the 10-digit!', 3000);
@@ -62,26 +67,46 @@ export default function SignUp() {
     }
     if (number.value.length > 10) {
       setLoading(p => !p)
-      errorToast('Please Enter the 10-digit Number Only!', 3000);
+      errorToast('Phone Number Greater Than 10-digits', 3000);
       return;
     }
-    if (password.value == confirm.value) {
-      let data = { firstName: (firstName.value).trim(), lastName: (lastName.value).trim(), number: (number.value).trim(), email: (email.value).trim(), gender: (gender.value).trim(), password: (password.value).trim(), confirm: (confirm.value).trim() }
-      axios.post('https://youtube-e-com-backend.onrender.com/signup', data).then((res) => {
-        if (res.data == 'user_already_exist') {
-          setLoading(p => !p)
-          errorToast('Email Already Exist', 2000)
-          return;
-        } else {
-          navigate('/login')
-          Toast('🥳New Account Created🎉', 2000)
-        }
-      })
+
+    if (!emailRegex.test(email.value)) {
+      errorToast('Invalid email format! Please enter a valid email address.', 4000);
       return;
     }
-    else {
+    if (!passwordRegex.test(password.value)) {
+      errorToast('Password must be at least 8 characters long, include a number(0-9), a special character($,#,@), and a letter([A-Z,a-z]).', 4000);
+      return;
+    }
+
+    if (password.value !== confirm.value) {
+      errorToast('Passwords do not match. Please try again.', 4000);
+      return;
+    }
+    try {
+      if (password.value == confirm.value) {
+        let data = { firstName: (firstName.value).trim(), lastName: (lastName.value).trim(), number: (number.value).trim(), email: (email.value).trim(), gender: (gender.value).trim(), password: (password.value).trim(), confirm: (confirm.value).trim() }
+        axios.post('https://youtube-e-com-backend.onrender.com/signup', data).then((res) => {
+          if (res.data == 'user_already_exist') {
+            setLoading(p => !p)
+            errorToast('Email Already Exist', 2000)
+            return;
+          } else {
+            navigate('/login')
+            Toast('🥳New Account Created🎉', 2000)
+          }
+        })
+        return;
+      }
+      else {
+        setLoading(p => !p)
+        errorToast('Check Password Again', 2000)
+      }
+    } catch (error) {
       setLoading(p => !p)
-      errorToast('Check Password Again', 2000)
+      console.log("Error Occured", error);
+
     }
   };
 
